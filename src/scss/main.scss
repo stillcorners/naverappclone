@@ -1,0 +1,12 @@
+@import './mixin'; // $main_green: #03c95b;
+// $background: #fff;
+// $font_color: #303038;
+
+.test {
+  width: 300px;
+  border: 1px solid;
+  height: 300px;
+  h2 {
+    color: tomato;
+  }
+}

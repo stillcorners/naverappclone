@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "transpile": "babel asset/js -d transpile",
+    "transpile:scss": "sass src/scss/main.scss:src/css/main.css"
+  }
+}
