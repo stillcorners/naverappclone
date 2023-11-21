@@ -1,0 +1,43 @@
+.shortcut {
+  width: 352px;
+  height: 152px;
+  max-width: 360px;
+  margin: 24px auto;
+
+  &__list {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: repeat(2, 78px, 3);
+    grid-template-columns: repeat(4, minmax(88px, 4fr));
+
+    &__2nd {
+      margin-top: 12px;
+    }
+  }
+
+  &__item__link {
+    display: flex;
+    flex-direction: column;
+
+    &__txt {
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 6px;
+      text-align: center;
+      letter-spacing: -0.6px;
+    }
+
+    &__image {
+      width: 44px;
+      height: 44px;
+      box-shadow: 0 2px 5px 0px rgba(117, 145, 181, 0.12);
+      border-radius: 13px;
+      background-color: white;
+    }
+  }
+
+  &__more {
+    margin-bottom: 21px;
+  }
+}

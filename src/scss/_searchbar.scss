@@ -1,0 +1,76 @@
+@import './mixin';
+
+.search {
+  padding-top: 60px;
+
+  &__container {
+    display: block;
+    position: relative;
+    max-width: 488px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    @include spImg(
+      $url: '/src/img/sp/sp_main_search.png',
+      $position: -2px -194px,
+      $size: 323px 273px
+    );
+
+    width: 36px;
+    height: 36px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    background-color: #03c75a;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 29px;
+    background-color: #fff;
+    width: 465px;
+    height: 50px;
+    border-radius: 29px;
+    word-break: break-all;
+    line-height: 18px;
+    font-weight: 500;
+    border: 1px solid #03c75a;
+    padding: 0 10px;
+    box-shadow: 0 5px 10px 0 rgba(117, 145, 181, 0.12);
+
+    &__input {
+      width: 100%;
+      font-size: 17px;
+      margin: 2px 0px 0px 14px;
+      background-color: #fff;
+      text-transform: none;
+      text-shadow: none;
+      text-align: start;
+      cursor: text;
+      word-break: break-all;
+
+      &::placeholder {
+        color: #bcc3c7;
+        font-size: 17px;
+        padding: 0 2px;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+      }
+    }
+
+    &__voice {
+      @include spImg(
+        $url: '/src/img/sp/sp_main_search.png',
+        $position: -258px -194px,
+        $size: 323px 273px
+      );
+
+      width: 34px;
+      height: 34px;
+      margin-right: 4px;
+      background-color: #03c75a;
+    }
+  }
+}

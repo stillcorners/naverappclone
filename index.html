@@ -13,18 +13,18 @@
   <body>
     <main class="app">
       <header class="header">
-        <nav class="header__aside">
-          <a class="header__aside__menu" type="button" aria-label="메뉴 버튼"></a>
-          <a class="header__aside__pay" type="button" aria-label="네이버 페이 버튼"></a>
+        <nav class="header__home">
+          <a class="header__home__menu" type="button" aria-label="메뉴 버튼"></a>
+          <a class="header__home__pay" type="button" aria-label="네이버 페이 버튼"></a>
         </nav>
         <nav class="header__home">
-          <a class="header__home__talk__link" href="#" aria-label="톡 버튼"></a>
-          <a class="header__home__noti__link" href="#" aria-label="알림 버튼"></a>
-          <a class="header__home__noti__na" href="#" aria-label="NA 버튼"></a>
+          <a class="header__home__talk" href="#" aria-label="톡 버튼"></a>
+          <a class="header__home__alert" href="#" aria-label="알림 버튼"></a>
+          <a class="header__home__na" href="#" aria-label="NA 버튼"></a>
         </nav>
       </header>
-      <div class="search__shortcut__container">
-        <div class="search">
+      <div class="search">
+        <div class="search__container">
           <form name="search" role="search" action="#" method="#" class="search__bar">
             <a href="#" class="search__logo" aria-label="네이버 로고"> </a>
             <input type="search" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요." class="search__bar__input" />
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="shortcut">
-        <ul class="shortcut__list sc__01">
+        <ul class="shortcut__list">
           <li class="shortcut__item">
             <a class="shortcut__item__link" href="#">
               <img src="./src/img/shortcut/news.png" class="shortcut__item__link__image" alt="뉴스판 아이콘" />
@@ -59,7 +59,7 @@
             </a>
           </li>
         </ul>
-        <ul class="shortcut__list sc__02">
+        <ul class="shortcut__list shortcut__list__2nd">
           <li class="shortcut__item">
             <a class="shortcut__item__link" href="#">
               <img src="./src/img/shortcut/mail.png" class="shortcut__item__link__image" alt="메일 아이콘" />
@@ -85,27 +85,24 @@
           </li>
         </ul>
       </div>
-      <div class="test">
-        <h2>test</h2>
-      </div>
       <!-- <div class="content"> -->
       <!--PC 1번째 줄 / 1/11: 날씨-->
-      <div class="weather content__card grid1">
-        <div class="weather__now__place">
-          <a href="#" class="wheather__now" aria-label="실시간 온도와 미세먼지">
-            <div class="weather__now__image__wrap">
-              <div class="weather__now__image"></div>
+      <div class="content__card grid1">
+        <div class="weather">
+          <a href="#" class="weather__now" aria-label="실시간 온도와 미세먼지">
+            <div class="weather__now__icon">
+              <span class="weather__now__icon__image"></span>
             </div>
             <div class="weather__now__info">
               <strong class="weather__now__info__bold">
-                <em class="weather__info__temp">18.2°</em>
+                <em class="weather__now__info__temp">18.2°</em>
                 서울
               </strong>
               <div class="weather__now__info__sub">
                 미세
-                <em class="weather__good">좋음</em>
+                <em class="weather__now__info__good">좋음</em>
                 ·초미세
-                <em class="weather__good">좋음</em>
+                <em class="weather__now__info__good">좋음</em>
               </div>
             </div>
           </a>
@@ -123,13 +120,13 @@
       </div>
 
       <!--PC 1번째 줄 2/11 배너: 네이버 앱-->
-      <div class="naverapp banner grid1 content__card">
-        <a class="naverapp__wrap content__card">
-          <p href="#" class="naverapp__wrap__txt" aria-label="네이버 앱 다운로드 페이지로 이동">
+      <div class="banner grid1 content__card">
+        <a class="naverapp content__card">
+          <p href="#" class="naverapp__txt" aria-label="네이버 앱 다운로드 페이지로 이동">
             더 편리해진 AI 검색 기능
             <br />
-            <em class="naverapp__bold">네이버앱</em>
-            <span class="naverapp__sub">에서 만나보세요</span>
+            <em class="naverapp__txt__bold">네이버앱</em>
+            <span class="naverapp__txt__sub">에서 만나보세요</span>
           </p>
         </a>
         <span class="naverapp__more">
@@ -140,8 +137,8 @@
       <!--PC 1번째 줄 3/11: 주식-->
       <div class="stock grid1 content__card">
         <div class="stock__wrap">
-          <div class="stock__item__list">
-            <a href="#" class="stock__contatiner__item">
+          <div class="stock__list">
+            <a href="#" class="stock__list__item">
               <strong class="stock__name">코스피</strong>
               <div class="stock__chart">
                 <em class="stock__chart__title">2,469.67</em>
@@ -152,7 +149,7 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="stock__contatiner__item">
+            <a href="#" class="stock__list__item">
               <strong class="stock__name">코스닥</strong>
               <div class="stock__chart">
                 <em class="stock__chart__title">830.08</em>
@@ -163,7 +160,7 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="stock__contatiner__item">
+            <a href="#" class="stock__list__item">
               <strong class="stock__name">나스닥100선물</strong>
               <div class="stock__chart">
                 <em class="stock__chart__title">15,184.50</em>
@@ -174,7 +171,7 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="stock__contatiner__item">
+            <a href="#" class="stock__list__item">
               <strong class="stock__name">S&P500 선물</strong>
               <div class="stock__chart">
                 <em class="stock__chart__title">4,245.00</em>
@@ -185,7 +182,7 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="stock__contatiner__item">
+            <a href="#" class="stock__list__item">
               <strong class="stock__name">코스닥</strong>
               <div class="stock__chart">
                 <em class="stock__chart__title">830.08</em>
@@ -213,13 +210,13 @@
           <li class="promotion__list__item">
             <div class="promotion__list__wrap promotion__list__item__left">
               <a class="promotion__link" href="#" aria-label="선물샵으로 이동">
-                <div class="promotion__link__btn promotion__link__btn__left"></div>
-                <div class="promotion__link__info__wrap">
-                  <div class="promotion__item__info">
-                    <strong class="promotion__item__info__title promotion__item__info__title__left">고민은 이제 그만</strong>
-                    <p class="promotion__item__info__desc">센스 만점 선물 여기 다 있어요</p>
+                
+                <div class="promotion__info">
+                  <div class="promotion__info__txt">
+                    <strong class="promotion__info__txt__title promotion__info__txt__title__left">고민은 이제 그만</strong>
+                    <p class="promotion__info__txt__desc">센스 만점 선물 여기 다 있어요</p>
                   </div>
-                  <img src="./src/img/service/04card_content_1.jpg" class="promotion__item__image" alt="선물샵 이미지" />
+                  <img src="./src/img/service/04card_content_1.jpg" class="promotion__info__image" alt="선물샵 이미지" />
                 </div>
               </a>
             </div>
@@ -227,13 +224,13 @@
           <li class="promotion__list__item">
             <div class="promotion__list__wrap promotion__list__item__left">
               <a class="promotion__link" href="#" aria-label="선물샵으로 이동">
-                <div class="promotion__link__btn promotion__link__btn__left"></div>
-                <div class="promotion__link__info__wrap">
-                  <div class="promotion__item__info">
-                    <strong class="promotion__item__info__title promotion__item__info__title__left">선물샵판</strong>
-                    <p class="promotion__item__info__desc">오래 기억될 선물을 전하세요</p>
+                
+                <div class="promotion__info">
+                  <div class="promotion__info__txt">
+                    <strong class="promotion__info__txt__title promotion__info__txt__title__left">선물샵판</strong>
+                    <p class="promotion__info__txt__desc">오래 기억될 선물을 전하세요</p>
                   </div>
-                  <img src="./src/img/service/04card_content_2.jpg" class="promotion__item__image" alt="선물샵 이미지" />
+                  <img src="./src/img/service/04card_content_2.jpg" class="promotion__info__image" alt="선물샵 이미지" />
                 </div>
               </a>
             </div>
@@ -241,28 +238,28 @@
           <li class="promotion__list__item">
             <div class="promotion__list__wrap promotion__list__item__right">
               <a class="promotion__link" href="#" aria-label="자동차판으로 이동">
-                <div class="promotion__link__info__wrap">
-                  <img src="./src/img/service/04card_content_3.jpg" class="promotion__item__image" alt="자동차판 이미지" />
-                  <div class="promotion__item__info">
-                    <strong class="promotion__item__info__title promotion__item__info__title__right">자동차판</strong>
-                    <p class="promotion__item__info__desc">기대되는 신차정보 자동차 트렌드</p>
+                <div class="promotion__info">
+                  <img src="./src/img/service/04card_content_3.jpg" class="promotion__info__image" alt="자동차판 이미지" />
+                  <div class="promotion__info__txt">
+                    <strong class="promotion__info__txt__title promotion__info__txt__title__right">자동차판</strong>
+                    <p class="promotion__info__txt__desc">기대되는 신차정보 자동차 트렌드</p>
                   </div>
                 </div>
-                <div class="promotion__link__btn promotion__link__btn__right"></div>
+                
               </a>
             </div>
           </li>
           <li class="promotion__list__item">
             <div class="promotion__list__wrap promotion__list__item__right">
               <a class="promotion__link" href="#" aria-label="웹툰 페이지으로 이동">
-                <div class="promotion__link__info__wrap">
-                  <img src="./src/img/service/04card_content_4.jpg" class="promotion__item__image" alt="웹툰 이미지" />
-                  <div class="promotion__item__info">
-                    <strong class="promotion__item__info__title promotion__item__info__title__right">놓칠 수 없는 꿀잼</strong>
-                    <p class="promotion__item__info__desc">오늘의 인기 웹툰 만나러 가기</p>
+                <div class="promotion__info">
+                  <img src="./src/img/service/04card_content_4.jpg" class="promotion__info__image" alt="웹툰 이미지" />
+                  <div class="promotion__info__txt">
+                    <strong class="promotion__info__txt__title promotion__info__txt__title__right">놓칠 수 없는 꿀잼</strong>
+                    <p class="promotion__info__txt__desc">오늘의 인기 웹툰 만나러 가기</p>
                   </div>
                 </div>
-                <div class="promotion__link__btn promotion__link__btn__right"></div>
+                
               </a>
             </div>
           </li>
@@ -273,8 +270,8 @@
         <div class="shoppinglive__card">
           <div class="shoppinglive__title">
             <a href="#" class="shoppinglive__title__icon" aria-label="쇼핑 라이브 로고">
-              <span class="shoppinglive__title__icon__title" aria-label="쇼핑 아이콘"></span>
-              <span class="shoppinglive__title__icon__logo" aria-label="로고 아이콘"></span>
+              <span class="shoppinglive__title__icon__live" aria-label="쇼핑 아이콘"></span>
+              <span class="shoppinglive__title__icon__logo" aria-label="라이브 아이콘"></span>
             </a>
             <a href="#" class="shoppinglive__schedule" aria-label="편성표 페이지">
               <!--편성표 아이콘 ::before-->
@@ -298,8 +295,8 @@
                 </div>
                 <div class="shoppinglive__item__info">
                   <em class="shoppinglive__info__title">10월 가을맞이 네츄럴굿띵스 DAY</em>
-                  <span class="shopppinglive__info__benefit">사은품증정</span>
-                  <div class="shopppinglive__store__wrap">
+                  <span class="shoppinglive__info__benefit">사은품증정</span>
+                  <div class="shoppinglive__store">
                     <div class="shoppinglive__store__profile">
                       <img
                         src="./src/img/service/05card_content_1_profile.jpg"
@@ -307,7 +304,7 @@
                         alt="쇼핑 라이브 첫 번째 상품, 네츄럴굿띵스"
                       />
                     </div>
-                    <em class="shoplive__store__name">네츄럴굿띵스</em>
+                    <em class="shoppinglive__store__name">네츄럴굿띵스</em>
                   </div>
                 </div>
               </a>
@@ -325,8 +322,8 @@
                 </div>
                 <div class="shoppinglive__item__info">
                   <em class="shoppinglive__info__title">아이오페 앰플3대장 오늘 N페이 최대혜택</em>
-                  <span class="shopppinglive__info__benefit">16.6만명 기다리는 중</span>
-                  <div class="shopppinglive__store__wrap">
+                  <span class="shoppinglive__info__benefit">16.6만명 기다리는 중</span>
+                  <div class="shoppinglive__store">
                     <div class="shoppinglive__store__profile">
                       <img
                         src="./src/img/service/05card_content_2_profile.jpg"
@@ -334,7 +331,7 @@
                         alt="쇼핑 라이브 두 번째 브랜드, 아이오페"
                       />
                     </div>
-                    <em class="shoplive__store__name">아이오페</em>
+                    <em class="shoppinglive__store__name">아이오페</em>
                   </div>
                 </div>
               </a>
@@ -358,8 +355,8 @@
                 </div>
                 <div class="shoppinglive__item__info">
                   <em class="shoppinglive__info__title">추위를 녹여줄 청정원 호밍스, 최대 52%+8% 적립</em>
-                  <span class="shopppinglive__info__benefit">📢포토리뷰 이벤트</span>
-                  <div class="shopppinglive__store__wrap">
+                  <span class="shoppinglive__info__benefit">📢포토리뷰 이벤트</span>
+                  <div class="shoppinglive__store">
                     <div class="shoppinglive__store__profile">
                       <img
                         src="./src/img/service/05card_content_3_profile.jpg"
@@ -367,7 +364,7 @@
                         alt="쇼핑 라이브 세 번째 브랜드, 청정원샵"
                       />
                     </div>
-                    <em class="shoplive__store__name">청정원샵</em>
+                    <em class="shoppinglive__store__name">청정원샵</em>
                   </div>
                 </div>
               </a>
@@ -385,8 +382,8 @@
                 </div>
                 <div class="shoppinglive__item__info">
                   <em class="shoppinglive__info__title">[롯데메가위크] 롯데월드 최초 메가급 릴레이 특가!</em>
-                  <span class="shopppinglive__info__benefit">10/27 선착순 한정 특가 진행!</span>
-                  <div class="shopppinglive__store__wrap">
+                  <span class="shoppinglive__info__benefit">10/27 선착순 한정 특가 진행!</span>
+                  <div class="shoppinglive__store">
                     <div class="shoppinglive__store__profile">
                       <img
                         src="./src/img/service/05card_content_4_profile.jpg"
@@ -394,7 +391,7 @@
                         alt="쇼핑 라이브 네 번째 브랜드, 롯데월드"
                       />
                     </div>
-                    <em class="shoplive__store__name">롯데월드</em>
+                    <em class="shoppinglive__store__name">롯데월드</em>
                   </div>
                 </div>
               </a>
@@ -462,13 +459,11 @@
       </div>
 
       <!--PC 3번째 줄 / 8/11: 배너: 레티놀 세럼-->
-      <div class="banner__ad banner grid1 content__card">
+      <div class="banner grid1 content__card">
         <div class="banner__ad__wrap content__card">
-          <div>
             <a class="banner__ad__link">
               <img src="/src/img/service/08card.png" class="banner__ad__image" alt="레티놀 세럼 구매하고 새틴백 받고 6종 체험키트까지 GET" />
             </a>
-          </div>
         </div>
         <button type="button" class="banner__ad__btn" aria-label="배너 종료"></button>
       </div>
@@ -579,5 +574,56 @@
         </div>
       </div>
     </main>
+
+    <!--이벤트 모아보기-->
+    <div class="event">
+      <div class="event__wrap">
+        <a href="#" class="event__link" aria-label="이벤트 모아보기 페이지로 이동">
+          <span class="event__txt">이벤트 모아보기</span>
+          <!--❗ 오른쪽 방향 아이콘 가상요소-->
+        </a>
+      </div>
+    </div>
+
+    <!--푸터-->
+    <!-- <footer class="footer">
+      <div class="footer__tools">
+        <div class="footer__tools__aside">
+          <button type="button" class="footer__up" aria-label="글씨 크기를 작아지게 만드는 버튼">가 -</button>
+          <button type="button" class="footer__down" aria-label="글씨 크기를 커지게 만드는 버튼">가 +</button>
+        </div>
+        <div class="footer__tools__top">
+          <button type="button" class="footer__top" aria-label="페이지 최상단으로 이동하는 버튼">
+            <img src="./src/img/sp/sp_main.png" class="footer__top__image" alt="위를 향하는 버튼" />
+          </button>
+        </div>
+      </div> -->
+
+      <!--가상요소: 푸터 전체 수평 구분선-->
+
+      <!-- <div class="footer__info">
+        <div class="footer__info__container">
+          <a href="#" class="footer__info__container__link">로그인</a>
+          
+          <a href="#" class="footer__info__container__link">전체서비스</a>
+          
+          <a href="#" class="footer__info__container__link">PC버전</a>
+        </div>
+        <div class="footer__info__container">
+          <a href="#" class="footer__info__container__link">이용약관</a>
+          
+          <a href="#" class="footer__info__container__link">
+            <strong>개인정보처리방침</strong>
+          </a>
+          
+          <a href="#" class="footer__info__container__link"> 고객센터 </a>
+        </div>
+        <div class="footer__info__container">
+          <a href="#" class="footer__info__logo" aria-label="네이버 기업 페이지로 이동">
+            <img src="./src/img/sp/sp_main.png" class="footer__info__logo__image" alt="네이버 로고" /> </a
+          >
+        </div>
+      </div>
+    </footer> -->
   </body>
 </html>

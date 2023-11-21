@@ -2,3 +2,19 @@ $breakpoint-mobile: 500px;
 $breakpoint-tablet: 600px;
 $breakpoint-laptop: 1152px;
 // 모두 min-width 값
+
+.content__card {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+  /* padding: 0 20px; */
+  color: #303038;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 8px;
+  /*margin-top, margin-bottom 8px은 @media (min-width: 600px) 기준*/
+  max-width: 80%;
+  box-sizing: border-box;
+}

@@ -1,12 +1,45 @@
-@import './mixin'; // $main_green: #03c95b;
-// $background: #fff;
-// $font_color: #303038;
+@import './variable';
+@import './normalize';
+@import './header.scss';
+@import './searchbar';
+@import './shortcut';
+@import './footer';
+@import './contents/weathers';
+@import './contents/naverapp';
+@import './contents/stock';
+@import './contents/promotion';
+@import './contents/shoppinglive';
+@import './contents/card';
+@import './contents/banner';
+@import './contents/clip';
+@import './contents/event';
 
-.test {
-  width: 300px;
-  border: 1px solid;
-  height: 300px;
-  h2 {
-    color: tomato;
+@media screen and (max-width: 1652px) {
+  .content__card {
+    max-height: 1000px;
+  }
+
+  .content__card__item {
+    width: 48vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content__card {
+    max-height: 1000px;
+  }
+
+  .content__card__item {
+    width: 48vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content__card {
+    max-height: none;
+  }
+
+  .content__card__item {
+    width: 100%;
   }
 }

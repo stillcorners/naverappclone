@@ -1,0 +1,80 @@
+.card {
+  display: block;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__service {
+    display: block;
+    height: 40.58%;
+
+    &__wrap {
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      border-radius: inherit;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__profile {
+    display: block;
+    padding: 18px 15px;
+
+    &__image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-size: 50px 50px;
+
+      &__wrap {
+        float: left;
+        width: 50px;
+        margin-right: 12px;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+          border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
+
+    &__info {
+      overflow: hidden;
+      padding-top: 3px;
+    }
+
+    &__title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.5px;
+    }
+    &__desc {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-top: 4px;
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: -0.5px;
+      color: #767678;
+    }
+  }
+}

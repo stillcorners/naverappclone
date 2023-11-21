@@ -1,11 +1,16 @@
 {
   "devDependencies": {
     "sass": "^1.69.5",
-    "sass-loader": "^13.3.2"
+    "sass-loader": "^13.3.2",
+    "stylelint": "^15.11.0",
+    "stylelint-prettier": "^4.0.2"
   },
   "scripts": {
     "build": "webpack",
     "transpile": "babel asset/js -d transpile",
     "transpile:scss": "sass src/scss/main.scss:src/css/main.css"
+  },
+  "dependencies": {
+    "scss": "^0.2.4"
   }
 }

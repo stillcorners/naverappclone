@@ -1,0 +1,124 @@
+@import url(/src/scss/_mixin.scss);
+
+.promotion {
+  padding-top: 7px;
+
+  &__list {
+    padding: 0 20px;
+    justify-content: center;
+
+    &__item {
+      padding-top: 6px;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid hsl(213, 27%, 94%);
+      }
+
+      &__left {
+        display: flex;
+        align-items: center;
+        text-align: right;
+
+        &::before {
+          content: '';
+          width: 30px;
+          height: 25px;
+          top: 50%;
+
+          @include spImg(
+            $url: '/src/img/sp/sp_search.png',
+            $repeat: no-repeat,
+            $size: 500px 456px,
+            $position: -358px -392px
+          );
+        }
+      }
+
+      &__right::after {
+        content: '';
+        width: 30px;
+        height: 25px;
+        top: 30%;
+        position: relative;
+
+        @include spImg(
+          $url: '/src/img/sp/sp_search.png',
+          $repeat: no-repeat,
+          $size: 500px 456px,
+          $position: -390px -392px
+        );
+      }
+    }
+
+    &__wrap {
+      position: relative;
+      display: flex;
+      height: 72px;
+    }
+  }
+
+  &__link {
+    overflow: hidden;
+    z-index: 1;
+    flex: 1 1 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 99%;
+    margin: 0 auto;
+
+    &__info__wrap {
+      display: flex;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    &__image {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      white-space: nowrap;
+    }
+
+    &__txt {
+      overflow: hidden;
+      padding: 3px 18px 0;
+
+      &__title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        font-size: 1.5rem;
+        line-height: 22px;
+        letter-spacing: -0.32px;
+
+        &__left {
+          color: #9761ed;
+        }
+
+        &__right {
+          color: #0ac666;
+        }
+      }
+
+      &__desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 3px;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: -0.47px;
+        color: #767678;
+      }
+    }
+  }
+}

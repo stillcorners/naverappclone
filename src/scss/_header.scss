@@ -1,0 +1,67 @@
+@import './mixin';
+
+.header {
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+
+  &__home {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 8px;
+
+    &__menu,
+    &__pay,
+    &__talk,
+    &__alert,
+    &__na {
+      width: 44px;
+      height: 44px;
+      display: inline-block;
+    }
+
+    &__menu {
+      @include spImg(
+        $url: '/src/img/sp/sp_main_search.png',
+        $position: -47px -145px,
+        $size: 323px 273px
+      );
+    }
+
+    &__pay {
+      @include spImg(
+        $url: '/src/img/sp/sp_main_search.png',
+        $position: -88px -191px,
+        $size: 323px 273px
+      );
+    }
+
+    &__talk {
+      @include spImg(
+        $url: '/src/img/sp/sp_main_search.png',
+        $position: -135px -192px,
+        $size: 323px 273px
+      );
+    }
+
+    &__alert {
+      @include spImg(
+        $url: '/src/img/sp/sp_main_search.png',
+        $position: -49px -192px,
+        $size: 323px 273px
+      );
+    }
+
+    &__na {
+      @include spImg(
+        $url: '/src/img/sp/sp_main_search.png',
+        $position: -261px -76px,
+        $size: 323px 273px
+      );
+    }
+  }
+}
