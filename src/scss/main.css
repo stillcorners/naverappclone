@@ -207,31 +207,31 @@ template {
   display: inline-block;
 }
 .header__home__menu {
-  background: url('/src/img/sp/sp_main_search.png');
+  background: url('./src/img/sp/sp_main_search.png');
   background-repeat: no-repeat;
   background-position: -47px -145px;
   background-size: 323px 273px;
 }
 .header__home__pay {
-  background: url('/src/img/sp/sp_main_search.png');
+  background: url('./src/img/sp/sp_main_search.png');
   background-repeat: no-repeat;
   background-position: -88px -191px;
   background-size: 323px 273px;
 }
 .header__home__talk {
-  background: url('/src/img/sp/sp_main_search.png');
+  background: url('./src/img/sp/sp_main_search.png');
   background-repeat: no-repeat;
   background-position: -135px -192px;
   background-size: 323px 273px;
 }
 .header__home__alert {
-  background: url('/src/img/sp/sp_main_search.png');
+  background: url('./src/img/sp/sp_main_search.png');
   background-repeat: no-repeat;
   background-position: -49px -192px;
   background-size: 323px 273px;
 }
 .header__home__na {
-  background: url('/src/img/sp/sp_main_search.png');
+  background: url('./src/img/sp/sp_main_search.png');
   background-repeat: no-repeat;
   background-position: -261px -76px;
   background-size: 323px 273px;
@@ -247,7 +247,7 @@ template {
   margin: 0 auto;
 }
 .search__logo {
-  background: url('/src/img/sp/sp_main_search.png');
+  background: url('./src/img/sp/sp_main_search.png');
   background-repeat: no-repeat;
   background-position: -2px -194px;
   background-size: 323px 273px;
@@ -299,7 +299,7 @@ template {
   letter-spacing: -0.5px;
 }
 .search__bar__voice {
-  background: url('/src/img/sp/sp_main_search.png');
+  background: url('./src/img/sp/sp_main_search.png');
   background-repeat: no-repeat;
   background-position: -258px -194px;
   background-size: 323px 273px;
@@ -368,7 +368,7 @@ template {
   display: block;
   width: 48px;
   height: 40px;
-  background: url('/src/img/sp/sp_weather.png');
+  background: url('./src/img/sp/sp_weather.png');
   background-repeat: no-repeat;
   background-position: -139px 6px;
   background-size: 423px 373px;
@@ -457,7 +457,7 @@ template {
   color: #767678;
 }
 .naverapp::before {
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -214px -92px;
   background-size: 408px 372px;
@@ -589,7 +589,7 @@ template {
   overflow: hidden;
   margin-right: 2px;
   vertical-align: top;
-  background: url(/src/img/sp/sp_search.png);
+  background: url(./src/img/sp/sp_search.png);
   background-size: 408px 372px;
   background-repeat: no-repeat;
   background-position: -178px -147px;
@@ -679,7 +679,7 @@ template {
   width: 30px;
   height: 25px;
   top: 50%;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -358px -392px;
   background-size: 500px 456px;
@@ -690,7 +690,7 @@ template {
   height: 25px;
   top: 30%;
   position: relative;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -390px -392px;
   background-size: 500px 456px;
@@ -782,7 +782,7 @@ template {
   color: transparent;
   white-space: nowrap;
   vertical-align: -2px;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -201px -322px;
   background-size: 408px 372px;
@@ -794,7 +794,7 @@ template {
   display: inline-block;
   color: transparent;
   vertical-align: top;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -349px -204px;
   background-size: 408px 372px;
@@ -815,7 +815,7 @@ template {
   height: 16px;
   margin-right: 1px;
   vertical-align: -2px;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -390px -186px;
   background-size: 3408px 372px;
@@ -925,7 +925,7 @@ template {
   height: 14px;
   margin-left: 1px;
   vertical-align: -2px;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -390px -269px;
   background-size: 408px 372px;
@@ -1067,7 +1067,7 @@ template {
   width: 24px;
   height: 24px;
   background-position: -349px -293px;
-  background-image: url(/src/img/sp/sp_search.png);
+  background-image: url(./src/img/sp/sp_search.png);
   background-size: 408px 372px;
   background-repeat: no-repeat;
 }
@@ -1103,7 +1103,7 @@ template {
   display: block;
   width: 49px;
   height: 20px;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -73px -297px;
   background-size: 408px 372px;
@@ -1143,7 +1143,7 @@ template {
   background-position: -216px -204px;
   margin-right: 1px;
   vertical-align: -2px;
-  background-image: url(/src/img/sp/sp_main.png);
+  background-image: url(./src/img/sp/sp_main.png);
   background-size: 254px 220px;
   background-repeat: no-repeat;
   margin-right: 3px;
@@ -1214,7 +1214,7 @@ template {
   background-position: 0 0;
   vertical-align: top;
   margin: 0 12px 0 24px;
-  background: url('/src/img/sp/sp_search.png');
+  background: url('./src/img/sp/sp_search.png');
   background-repeat: no-repeat;
   background-position: -147px -111px;
   background-size: 408px 372px;
