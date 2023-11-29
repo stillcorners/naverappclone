@@ -132,9 +132,7 @@ select {
 }
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type='button'] {
   appearance: button;
   cursor: pointer;
   padding: 0;
@@ -144,13 +142,6 @@ input:focus {
   outline: white;
 }
 
-.scroll {
-  width: 90%;
-  overflow: hidden;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
 [type='search'] {
   appearance: textfield;
   outline-offset: -2px;
@@ -158,12 +149,4 @@ input:focus {
 
 [type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
 }

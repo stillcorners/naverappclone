@@ -174,25 +174,25 @@ input:focus {
   background-size: 323px 273px;
 }
 .header__home__pay {
-  background: url(/naver/src/img/sp/sp_main_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main_search.png);
   background-repeat: no-repeat;
   background-position: -88px -191px;
   background-size: 323px 273px;
 }
 .header__home__talk {
-  background: url(/naver/src/img/sp/sp_main_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main_search.png);
   background-repeat: no-repeat;
   background-position: -135px -192px;
   background-size: 323px 273px;
 }
 .header__home__alert {
-  background: url(/naver/src/img/sp/sp_main_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main_search.png);
   background-repeat: no-repeat;
   background-position: -49px -192px;
   background-size: 323px 273px;
 }
 .header__home__na {
-  background: url(/naver/src/img/sp/sp_main_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main_search.png);
   background-repeat: no-repeat;
   background-position: -261px -76px;
   background-size: 323px 273px;
@@ -208,7 +208,7 @@ input:focus {
   margin: 0 auto;
 }
 .search__logo {
-  background: url(/naver/src/img/sp/sp_main_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main_search.png);
   background-repeat: no-repeat;
   background-position: -2px -194px;
   background-size: 323px 273px;
@@ -253,7 +253,7 @@ input:focus {
   letter-spacing: -0.5px;
 }
 .search__bar__voice {
-  background: url(/naver/src/img/sp/sp_main_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main_search.png);
   background-repeat: no-repeat;
   background-position: -258px -194px;
   background-size: 323px 273px;
@@ -321,7 +321,7 @@ input:focus {
   display: block;
   width: 48px;
   height: 40px;
-  background: url(/naver/src/img/sp/sp_weather.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_weather.png);
   background-repeat: no-repeat;
   background-position: -139px 6px;
   background-size: 423px 373px;
@@ -388,7 +388,7 @@ input:focus {
   height: 16px;
   margin: 4px 4px;
   vertical-align: top;
-  background-image: url(/naver/src/img/sp/sp_search.png);
+  background-image: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-position: 20px 26px;
   background-size: 420px 383px;
 }
@@ -411,7 +411,7 @@ input:focus {
   color: #767678;
 }
 .naverapp::before {
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -214px -92px;
   background-size: 408px 372px;
@@ -542,7 +542,7 @@ input:focus {
   overflow: hidden;
   margin-right: 2px;
   vertical-align: top;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-size: 408px 372px;
   background-repeat: no-repeat;
   background-position: -178px -147px;
@@ -634,7 +634,7 @@ input:focus {
   width: 30px;
   height: 25px;
   top: 50%;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -358px -392px;
   background-size: 500px 456px;
@@ -645,7 +645,7 @@ input:focus {
   height: 25px;
   top: 30%;
   position: relative;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -390px -392px;
   background-size: 500px 456px;
@@ -738,7 +738,7 @@ input:focus {
   color: transparent;
   white-space: nowrap;
   vertical-align: -2px;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -201px -322px;
   background-size: 408px 372px;
@@ -750,7 +750,7 @@ input:focus {
   display: inline-block;
   color: transparent;
   vertical-align: top;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -349px -204px;
   background-size: 408px 372px;
@@ -771,7 +771,7 @@ input:focus {
   height: 16px;
   margin-right: 1px;
   vertical-align: -2px;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -390px -186px;
   background-size: 408px 372px;
@@ -882,7 +882,7 @@ input:focus {
   height: 14px;
   margin-left: 1px;
   vertical-align: -2px;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -390px -269px;
   background-size: 408px 372px;
@@ -1034,7 +1034,7 @@ input:focus {
   display: block;
   width: 49px;
   height: 20px;
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-repeat: no-repeat;
   background-position: -73px -297px;
   background-size: 408px 372px;
@@ -1073,7 +1073,7 @@ input:focus {
   height: 13px;
   background-position: -216px -204px;
   vertical-align: -2px;
-  background-image: url(/naver/src/img/sp/sp_main.png);
+  background-image: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main.png);
   background-size: 254px 220px;
   background-repeat: no-repeat;
   margin-right: 3px;
@@ -1150,7 +1150,7 @@ input:focus {
   vertical-align: top;
   margin: 0 12px 0 24px;
 
-  background: url(/naver/src/img/sp/sp_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-size: 408px 372px;
   background-position: 0 0;
 }
@@ -1171,7 +1171,7 @@ input:focus {
   vertical-align: top;
   margin: 20px 24px 0 4px;
 
-  background-image: url(/naver/src/img/sp/sp_search.png);
+  background-image: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_search.png);
   background-size: 408px 372px;
   background-position: -147px -111px;
   background-repeat: no-repeat;
@@ -1283,7 +1283,7 @@ input:focus {
   height: 23px;
   margin: auto;
 
-  background: url(/naver/src/img/sp/sp_main.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main.png);
   background-size: 254px 220px;
   background-repeat: no-repeat;
   background-position: -84px -140px;
@@ -1332,7 +1332,7 @@ input:focus {
   overflow: hidden;
   vertical-align: top;
 
-  background-image: url(/naver/src/img/sp/sp_main.png);
+  background-image: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main.png);
   background-position: -47px -120px;
   background-size: 245px 220px;
   background-repeat: no-repeat;
