@@ -26,7 +26,7 @@
           top: 50%;
 
           @include spImg(
-            $url: '/src/img/sp/sp_search.png',
+            $url: '/naver/src/img/sp/sp_search.png',
             $repeat: no-repeat,
             $size: 500px 456px,
             $position: -358px -392px
@@ -42,7 +42,7 @@
         position: relative;
 
         @include spImg(
-          $url: '/src/img/sp/sp_search.png',
+          $url: '/naver/src/img/sp/sp_search.png',
           $repeat: no-repeat,
           $size: 500px 456px,
           $position: -390px -392px

@@ -11,7 +11,6 @@
     background-color: #fff;
     overflow: hidden;
     display: block;
-    /* padding: 0 15px 0 20px; */
     min-width: 140px;
     box-sizing: border-box;
     white-space: nowrap;
@@ -27,19 +26,15 @@
     padding-top: 3px;
     padding-left: 2px;
     padding-bottom: 16px;
-    /* padding: 0 15px 0 20px; */
-    /* padding: 20px 2px 16px 0; */
 
     &__item {
       flex-grow: 1;
       display: flex;
       display: block;
-      /* position: relative; */
       white-space: nowrap;
-      padding: 0 15px 0 5px;
-      /* min-width: 140px; */
+      padding: 0 8px 0 10px;
       box-sizing: border-box;
-      min-width: 140px;
+      min-width: 120px;
 
       &:not(:last-of-type) {
         border-right: 1px solid #efeff0;
@@ -59,8 +54,6 @@
 
   &__chart {
     display: block;
-    /* display: flex;
-    position: relative; */
 
     &__title {
       margin-bottom: 2px;
@@ -89,11 +82,13 @@
       overflow: hidden;
       margin-right: 2px;
       vertical-align: top;
-      background: url(/src/img/sp/sp_search.png);
-      background-size: 408px 372px;
-      background-repeat: no-repeat;
-      background-position: -178px -147px;
       margin: 0 4px 0 0;
+
+      @include spImg(
+        $url: '/naver/src/img/sp/sp_search.png',
+        $position: -178px -147px,
+        $size: 408px 372px
+      );
     }
 
     &__price {
@@ -116,8 +111,6 @@
     display: flex;
     position: relative;
     margin: 0 auto;
-    /* width: 374.4px; */
-    width: 95%;
 
     &__container {
       flex: 1;

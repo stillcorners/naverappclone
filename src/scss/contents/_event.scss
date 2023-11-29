@@ -1,36 +1,59 @@
-// .event {
-//   display: block;
-//   margin: 0 27px;
+.event {
+  display: block;
+  margin: 0 27px;
 
-//   &__wrap {
-//     margin: 16px 0 24px;
-//     text-align: center;
-//   }
+  &__wrap {
+    margin: 16px 0 24px;
+    text-align: center;
+  }
 
-//   &__link {
-//     position: relative;
-//     display: inline-block;
-//     vertical-align: top;
-//     font-size: 0;
-//     line-height: 0;
-//     border-radius: 27px;
-//     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
-//     background-color: #fdfdfd;
+  &__link {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 27px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+    background-color: #fdfdfd;
 
-//     &::before {
-//       content: '';
-//       display: inline-block;
-//       width: 56px;
-//       height: 53px;
-//       background-position: 0 0;
-//       vertical-align: top;
-//       margin: 0 12px 0 24px;
+    font-size: 0;
+    line-height: 0;
 
-//       @include spImg(
-//         $url: '/src/img/sp/sp_search.png',
-//         $size: 408px 372px,
-//         $position: -147px -111px
-//       );
-//     }
-//   }
-// }
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 56px;
+      height: 53px;
+      vertical-align: top;
+      margin: 0 12px 0 24px;
+
+      background: url(/naver/src/img/sp/sp_search.png);
+      background-size: 408px 372px;
+      background-position: 0 0;
+    }
+  }
+
+  &__txt {
+    font-size: 1.4rem;
+    line-height: 53px;
+    letter-spacing: -0.5px;
+    color: #767678;
+    vertical-align: top;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      vertical-align: top;
+      margin: 20px 24px 0 4px;
+
+      @include spImg(
+        $url: '/naver/src/img/sp/sp_search.png',
+        $size: 408px 372px,
+        $position: -147px -111px
+      );
+    }
+  }
+}

@@ -1,15 +1,22 @@
 .naverapp {
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
   color: #767678;
 
   &::before {
-    @include spImg($url: '/src/img/sp/sp_search.png', $position: -214px -92px, $size: 408px 372px);
+    @include spImg(
+      $url: '/naver/src/img/sp/sp_search.png',
+      $position: -214px -92px,
+      $size: 408px 372px
+    );
 
     content: '';
     width: 40px;
     height: 40px;
-    margin-right: 15px;
+    display: block;
+    padding-right: 10px;
+    flex: 0 0 auto;
   }
 
   &__txt {
@@ -26,7 +33,6 @@
 
     &__bold {
       font-style: normal;
-      font-weight: normal;
       font-weight: 700;
     }
 

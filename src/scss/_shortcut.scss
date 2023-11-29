@@ -8,7 +8,6 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-rows: repeat(2, 78px, 3);
     grid-template-columns: repeat(4, minmax(88px, 4fr));
 
     &__2nd {

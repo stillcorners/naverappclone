@@ -1,45 +1,64 @@
-@import './variable';
-@import './normalize';
-@import './header.scss';
-@import './searchbar';
-@import './shortcut';
-@import './footer';
-@import './contents/weathers';
-@import './contents/naverapp';
-@import './contents/stock';
-@import './contents/promotion';
-@import './contents/shoppinglive';
-@import './contents/card';
-@import './contents/banner';
-@import './contents/clip';
-@import './contents/event';
+@import '/naver/src/scss//variable';
+@import '/naver/src/scss/normalize';
+@import '/naver/src/scss/header.scss';
+@import '/naver/src/scss/searchbar';
+@import '/naver/src/scss/shortcut';
+@import '/naver/src/scss/footer';
+@import '/naver/src/scss/contents/weathers';
+@import '/naver/src/scss/contents/naverapp';
+@import '/naver/src/scss/contents/stock';
+@import '/naver/src/scss/contents/promotion';
+@import '/naver/src/scss/contents/shoppinglive';
+@import '/naver/src/scss/contents/card';
+@import '/naver/src/scss/contents/banner';
+@import '/naver/src/scss/contents/clip';
+@import '/naver/src/scss/contents/event';
 
-@media screen and (max-width: 1652px) {
-  .content__card {
-    max-height: 1000px;
+.content__card {
+  color: #303038;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1152px) {
+  .service__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
-  .content__card__item {
-    width: 48vw;
+  .content__card {
+    width: 23vw;
+    margin: 16px 12px;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 600px) {
+  .search__bar {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
   .content__card {
-    max-height: 1000px;
+    width: 100vw;
+    margin: 8px 9px 8px 9px;
+    max-height: 420px;
+    margin: 10px 0;
   }
 
-  .content__card__item {
-    width: 48vw;
-  }
-}
+  .shortcut {
+    width: 15vw;
+    margin-left: 25px;
+    position: relative;
 
-@media screen and (max-width: 768px) {
-  .content__card {
-    max-height: none;
-  }
-
-  .content__card__item {
-    width: 100%;
+    &__list {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: repeat(4, 80px);
+    }
   }
 }

@@ -31,7 +31,7 @@
         height: 20px;
 
         @include spImg(
-          $url: '/src/img/sp/sp_search.png',
+          $url: '/naver/src/img/sp/sp_search.png',
           $position: -73px -297px,
           $size: 408px 372px
         );
@@ -39,8 +39,6 @@
     }
   }
   &__wrap {
-    /* margin-left: -16px;
-  margin-right: -16px; */
     padding-bottom: 21px;
   }
   &__list {
@@ -74,13 +72,14 @@
         display: inline-block;
         width: 11px;
         height: 13px;
-        background-position: -216px -204px;
-        margin-right: 1px;
         vertical-align: -2px;
-        background-image: url(/src/img/sp/sp_main.png);
-        background-size: 254px 220px;
-        background-repeat: no-repeat;
         margin-right: 3px;
+
+        @include spImg(
+          $url: '/naver/src/img/sp/sp_main.png',
+          $position: -216px -204px,
+          $size: 254px 220px
+        );
       }
 
       &__time {

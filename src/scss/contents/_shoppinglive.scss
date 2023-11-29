@@ -26,7 +26,7 @@
         vertical-align: -2px;
 
         @include spImg(
-          $url: '/src/img/sp/sp_search.png',
+          $url: '/naver/src/img/sp/sp_search.png',
           $position: -201px -322px,
           $size: 408px 372px
         );
@@ -41,7 +41,7 @@
         vertical-align: top;
 
         @include spImg(
-          $url: '/src/img/sp/sp_search.png',
+          $url: '/naver/src/img/sp/sp_search.png',
           $position: -349px -204px,
           $size: 408px 372px
         );
@@ -67,9 +67,9 @@
       vertical-align: -2px;
 
       @include spImg(
-        $url: '/src/img/sp/sp_search.png',
+        $url: '/naver/src/img/sp/sp_search.png',
         $position: -390px -186px,
-        $size: 3408px 372px
+        $size: 408px 372px
       );
     }
   }
@@ -188,7 +188,7 @@
       vertical-align: -2px;
 
       @include spImg(
-        $url: '/src/img/sp/sp_search.png',
+        $url: '/naver/src/img/sp/sp_search.png',
         $position: -390px -269px,
         $size: 408px 372px
       );
