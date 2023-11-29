@@ -168,7 +168,7 @@ input:focus {
   display: inline-block;
 }
 .header__home__menu {
-  background: url(/src/img/sp/sp_main_search.png);
+  background: url(https://stillcorners.github.io/naverappclone/src/img/sp/sp_main_search.png);
   background-repeat: no-repeat;
   background-position: -47px -145px;
   background-size: 323px 273px;
