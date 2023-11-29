@@ -21,7 +21,7 @@
         height: 40px;
 
         @include spImg(
-          $url: '/naver/src/img/sp/sp_weather.png',
+          $url: '/src/img/sp/sp_weather.png',
           $position: -139px 6px,
           $size: 423px 373px
         );
@@ -96,11 +96,7 @@
         margin: 4px 4px;
         vertical-align: top;
 
-        @include spImg(
-          $url: '/naver/src/img/sp/sp_search.png',
-          $position: 20px 26px,
-          $size: 420px 383px
-        );
+        @include spImg($url: '/src/img/sp/sp_search.png', $position: 20px 26px, $size: 420px 383px);
       }
     }
   }

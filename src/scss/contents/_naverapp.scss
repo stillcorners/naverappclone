@@ -5,11 +5,7 @@
   color: #767678;
 
   &::before {
-    @include spImg(
-      $url: '/naver/src/img/sp/sp_search.png',
-      $position: -214px -92px,
-      $size: 408px 372px
-    );
+    @include spImg($url: '/src/img/sp/sp_search.png', $position: -214px -92px, $size: 408px 372px);
 
     content: '';
     width: 40px;

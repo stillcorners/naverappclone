@@ -28,9 +28,13 @@
       vertical-align: top;
       margin: 0 12px 0 24px;
 
-      background: url(/naver/src/img/sp/sp_search.png);
-      background-size: 408px 372px;
-      background-position: 0 0;
+      @include spImg(
+        $url: (
+          '/src/img/sp/sp_search.png',
+        ),
+        $size: 408px 372px,
+        $position: 0 0
+      );
     }
   }
 
@@ -50,7 +54,9 @@
       margin: 20px 24px 0 4px;
 
       @include spImg(
-        $url: '/naver/src/img/sp/sp_search.png',
+        $url: (
+          '/src/img/sp/sp_search.png',
+        ),
         $size: 408px 372px,
         $position: -147px -111px
       );

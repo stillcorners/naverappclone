@@ -102,7 +102,7 @@
         margin: auto;
 
         @include spImg(
-          $url: '/naver/src/img/sp/sp_main.png',
+          $url: '/src/img/sp/sp_main.png',
           $size: 254px 220px,
           $position: -84px -140px
         );
@@ -153,10 +153,6 @@
     overflow: hidden;
     vertical-align: top;
 
-    @include spImg(
-      $url: '/naver/src/img/sp/sp_main.png',
-      $size: 245px 220px,
-      $position: -47px -120px
-    );
+    @include spImg($url: '/src/img/sp/sp_main.png', $size: 245px 220px, $position: -47px -120px);
   }
 }
