@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="네이버 모바일 앱 클론코딩" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./src/img/symbol/symbol.png" />
     <link rel="stylesheet" href="./src/css/normalize.css" />
@@ -24,15 +25,27 @@
       </header>
       <div class="search">
         <div class="search__container">
-          <form name="search" role="search" action="#" method="#" class="search__bar">
+          <form name="search" role="search" action="#" method="get" class="search__bar">
             <a href="#" class="search__logo" aria-label="네이버 로고"> </a>
             <input
               type="search"
               title="검색어를 입력해주세요."
-              placeholder="검색어를 입력해주세요."
+              placeholder="검색 API 외 모두 목업 디자인입니다"
               class="search__bar__input"
+              id="searchQuery"
             />
-            <button type="button" aria-label="음성 인식" class="search__bar__voice"></button>
+            <!-- <button
+              type="submit"
+              class="search__bar__submit"
+              aria-label="검색 버튼"
+            ></button> -->
+
+            <button
+              type="button"
+              id="searchButton"
+              aria-label="음성 인식"
+              class="search__bar__voice"
+            ></button>
           </form>
         </div>
       </div>
@@ -156,7 +169,11 @@
           </div>
           <div class="grid1 banner content__card">
             <a class="naverapp content__card">
-              <p href="#" class="naverapp__txt" aria-label="네이버 앱 다운로드 페이지로 이동">
+              <p
+                href="#"
+                class="naverapp__txt"
+                aria-label="네이버 앱 다운로드 페이지로 이동"
+              >
                 더 편리해진 AI 검색 기능
                 <strong class="naverapp__txt__bold">네이버앱</strong>에서 만나보세요
               </p>
@@ -244,7 +261,9 @@
                           class="promotion__info__txt__title promotion__info__txt__title__left"
                           >고민은 이제 그만</strong
                         >
-                        <p class="promotion__info__txt__desc">센스 만점 선물 여기 다 있어요</p>
+                        <p class="promotion__info__txt__desc">
+                          센스 만점 선물 여기 다 있어요
+                        </p>
                       </div>
                       <img
                         src="./src/img/service/04card_content_1.jpg"
@@ -264,7 +283,9 @@
                           class="promotion__info__txt__title promotion__info__txt__title__left"
                           >선물샵판</strong
                         >
-                        <p class="promotion__info__txt__desc">오래 기억될 선물을 전하세요</p>
+                        <p class="promotion__info__txt__desc">
+                          오래 기억될 선물을 전하세요
+                        </p>
                       </div>
                       <img
                         src="./src/img/service/04card_content_2.jpg"
@@ -289,7 +310,9 @@
                           class="promotion__info__txt__title promotion__info__txt__title__right"
                           >자동차판</strong
                         >
-                        <p class="promotion__info__txt__desc">기대되는 신차정보 자동차 트렌드</p>
+                        <p class="promotion__info__txt__desc">
+                          기대되는 신차정보 자동차 트렌드
+                        </p>
                       </div>
                     </div>
                   </a>
@@ -309,7 +332,9 @@
                           class="promotion__info__txt__title promotion__info__txt__title__right"
                           >놓칠 수 없는 꿀잼</strong
                         >
-                        <p class="promotion__info__txt__desc">오늘의 인기 웹툰 만나러 가기</p>
+                        <p class="promotion__info__txt__desc">
+                          오늘의 인기 웹툰 만나러 가기
+                        </p>
                       </div>
                     </div>
                   </a>
@@ -323,11 +348,23 @@
           <div class="shoppinglive grid1 content__card">
             <div class="shoppinglive__card">
               <div class="shoppinglive__title">
-                <a href="#" class="shoppinglive__title__icon" aria-label="쇼핑 라이브 로고">
-                  <span class="shoppinglive__title__icon__live" aria-label="쇼핑 아이콘"></span>
-                  <span class="shoppinglive__title__icon__logo" aria-label="라이브 아이콘"></span>
+                <a
+                  href="#"
+                  class="shoppinglive__title__icon"
+                  aria-label="쇼핑 라이브 로고"
+                >
+                  <span
+                    class="shoppinglive__title__icon__live"
+                    aria-label="쇼핑 아이콘"
+                  ></span>
+                  <span
+                    class="shoppinglive__title__icon__logo"
+                    aria-label="라이브 아이콘"
+                  ></span>
                 </a>
-                <a href="#" class="shoppinglive__schedule" aria-label="편성표 페이지"> 편성표 </a>
+                <a href="#" class="shoppinglive__schedule" aria-label="편성표 페이지">
+                  편성표
+                </a>
               </div>
               <ul class="shoppinglive__list">
                 <li class="shoppinglive__item">
@@ -345,11 +382,15 @@
                         height="86"
                       />
                       <div class="shoppinglive__item__badge">
-                        <span class="shoppinglive__item__badge__txt">10월 27일 10:00</span>
+                        <span class="shoppinglive__item__badge__txt"
+                          >10월 27일 10:00</span
+                        >
                       </div>
                     </div>
                     <div class="shoppinglive__item__info">
-                      <em class="shoppinglive__info__title">10월 가을맞이 네츄럴굿띵스 DAY</em>
+                      <em class="shoppinglive__info__title"
+                        >10월 가을맞이 네츄럴굿띵스 DAY</em
+                      >
                       <span class="shoppinglive__info__benefit">사은품증정</span>
                       <div class="shoppinglive__store">
                         <div class="shoppinglive__store__profile">
@@ -378,14 +419,18 @@
                         alt="쇼핑 라이브 두 번째 상품"
                       />
                       <div class="shoppinglive__item__badge">
-                        <span class="shoppinglive__item__badge__txt">10월 27일 19:00</span>
+                        <span class="shoppinglive__item__badge__txt"
+                          >10월 27일 19:00</span
+                        >
                       </div>
                     </div>
                     <div class="shoppinglive__item__info">
                       <em class="shoppinglive__info__title"
                         >아이오페 앰플3대장 오늘 N페이 최대혜택</em
                       >
-                      <span class="shoppinglive__info__benefit">16.6만명 기다리는 중</span>
+                      <span class="shoppinglive__info__benefit"
+                        >16.6만명 기다리는 중</span
+                      >
                       <div class="shoppinglive__store">
                         <div class="shoppinglive__store__profile">
                           <img
@@ -419,7 +464,9 @@
                         alt="쇼핑 라이브 세 번째 상품"
                       />
                       <div class="shoppinglive__item__badge">
-                        <span class="shoppinglive__item__badge__txt">10월 27일 19:00</span>
+                        <span class="shoppinglive__item__badge__txt"
+                          >10월 27일 19:00</span
+                        >
                       </div>
                     </div>
                     <div class="shoppinglive__item__info">
@@ -458,14 +505,18 @@
                         alt="쇼핑 라이브 네 번째 상품"
                       />
                       <div class="shoppinglive__item__badge">
-                        <span class="shoppinglive__item__badge__txt">10월 27일 19:00</span>
+                        <span class="shoppinglive__item__badge__txt"
+                          >10월 27일 19:00</span
+                        >
                       </div>
                     </div>
                     <div class="shoppinglive__item__info">
                       <em class="shoppinglive__info__title"
                         >[롯데메가위크] 롯데월드 최초 메가급 릴레이 특가!</em
                       >
-                      <span class="shoppinglive__info__benefit">10/27 선착순 한정 특가 진행!</span>
+                      <span class="shoppinglive__info__benefit"
+                        >10/27 선착순 한정 특가 진행!</span
+                      >
                       <div class="shoppinglive__store">
                         <div class="shoppinglive__store__profile">
                           <img
@@ -494,7 +545,9 @@
                     alt="롯데월드 혜택 프로필 이미지"
                   />
                 </div>
-                <span class="shoppinglive__info__title">롯데월드 7일간의 릴레이 혜택!</span>
+                <span class="shoppinglive__info__title"
+                  >롯데월드 7일간의 릴레이 혜택!</span
+                >
               </a>
             </div>
           </div>
@@ -587,7 +640,9 @@
                       <div class="clip__video__badge">
                         <span class="clip__video__badge__time">00:34</span>
                       </div>
-                      <span class="clip__video__desc">(PL 9R) 주장 손흥민 선수의 선제골 ⚽</span>
+                      <span class="clip__video__desc"
+                        >(PL 9R) 주장 손흥민 선수의 선제골 ⚽</span
+                      >
                     </a>
                     <a href="#" class="clip__video__channel" aria-label="클립 채널">
                       <span class="clip__video__channel__info">SPURS TV</span>
@@ -639,7 +694,9 @@
                       <div class="clip__video__badge">
                         <span class="clip__video__badge__time">00:34</span>
                       </div>
-                      <span class="clip__video__desc">(PL 9R) 주장 손흥민 선수의 선제골 ⚽</span>
+                      <span class="clip__video__desc"
+                        >(PL 9R) 주장 손흥민 선수의 선제골 ⚽</span
+                      >
                     </a>
                     <a href="#" class="clip__video__channel" aria-label="클립 채널">
                       <span class="clip__video__channel__info">SPURS TV</span>
@@ -761,10 +818,25 @@
             <a href="#" class="footer__info__container__link">고객센터 </a>
           </div>
           <div class="footer__info__container">
-            <a href="#" class="footer__info__logo" aria-label="네이버 비즈니스 페이지로 이동"> </a>
+            <a
+              href="#"
+              class="footer__info__logo"
+              aria-label="네이버 비즈니스 페이지로 이동"
+            >
+            </a>
           </div>
         </div>
       </div>
     </footer>
+    <script>
+      document
+        .getElementById('searchButton')
+        .addEventListener('click', async function () {
+          const query = document.getElementById('searchQuery').value;
+          const response = await fetch(`/search/blog?query=${encodeURIComponent(query)}`);
+          const data = await response.json();
+          document.getElementById('results').innerText = JSON.stringify(data, null, 2);
+        });
+    </script>
   </body>
 </html>

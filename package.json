@@ -1,16 +1,13 @@
 {
-  "devDependencies": {
-    "sass": "^1.69.5",
-    "sass-loader": "^13.3.2",
-    "stylelint": "^15.11.0",
-    "stylelint-prettier": "^4.0.2"
-  },
+  "name": "naver",
+  "version": "1.0.0",
+  "description": "mobile naver app clone",
+  "main": "index.html",
   "scripts": {
-    "build": "webpack",
-    "transpile": "babel asset/js -d transpile",
-    "transpile:scss": "sass src/scss/main.scss:src/css/main.css"
+    "scss": "node-sass --watch src/scss/main.scss src/scss/main.css src/css/style.css src/css/normalize.css",
+    "start": "node index.js",
+    "predeploy": "npm run build"
   },
-  "dependencies": {
-    "scss": "^0.2.4"
-  }
+  "author": "",
+  "license": "ISC"
 }

@@ -60,6 +60,19 @@
       }
     }
 
+    // &__submit {
+    //   @include spImg(
+    //     $url: '/src/img/sp/sp_main',
+    //     $position: -px -100px,
+    //     $size: 323px 273px
+    //   );
+
+    //   width: 34px;
+    //   height: 34px;
+    //   margin-right: 4px;
+    //   background-color: #03c75a;
+    // }
+
     &__voice {
       @include spImg(
         $url: '/src/img/sp/sp_main_search.png',
@@ -67,6 +80,7 @@
         $size: 323px 273px
       );
 
+      cursor: pointer;
       width: 34px;
       height: 34px;
       margin-right: 4px;
