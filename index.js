@@ -1,108 +1,139 @@
-// 네이버 검색 API 예제 - 블로그 검색
-const express = require('express');
-const app = express();
+// 검색창에서 엔터 누르면 API 요청
+document.addEventListener('DOMContentLoaded', function () {
+  var searchInput = document.getElementById('searchQuery');
 
-const client_id = 'oINvcti2ijXhM9DxWau8';
-const client_secret = 'laXayxxY8j';
-app.get('/search/blog', function (req, res) {
-  // const api_url = 'https://openapi.naver.com/v1/search/blog?query=' + encodeURI(req.query.query); // JSON 결과
-  const api_url =
-    'https://openapi.naver.com/v1/search/blog.xml?query=' + encodeURI(req.query.query); // XML 결과
-  const request = require('request');
-  const options = {
-    url: api_url,
-    headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret },
-  };
-  request.get(options, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      res.writeHead(200, { 'Content-Type': 'text/json;charset=utf-8' });
-      res.end(body);
-    } else {
-      res.status(response.statusCode).end();
-      console.log('error = ' + response.statusCode);
+  searchInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      var query = searchInput.value;
+      searchBlog(query);
     }
   });
 });
-app.listen(3000, function () {
-  console.log(
-    'http://127.0.0.1:3000/search/blog?query=검색어 app listening on port 3000!'
-  );
-});
 
-// const express = require('express');
-// const app = express();
+function searchBlog(query) {
+  var clientId = 'oINvcti2ijXhM9DxWau8';
+  var clientSecret = 'laXayxxY8j';
+  var apiUrl =
+    'https://openapi.naver.com/v1/search/blog.xml?query=' + encodeURIComponent(query);
 
-// async function fetchBlogData(query) {
-//   const api_url = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(
-//     query
-//   )}`;
-//   const options = {
-//     headers: {
-//       'X-Naver-Client-Id': oINvcti2ijXhM9DxWau8,
-//       'X-Naver-Client-Secret': laXayxxY8j,
-//     },
-//   };
+  var headers = {
+    'X-Naver-Client-Id': clientId,
+    'X-Naver-Client-Secret': clientSecret,
+  };
+  console.log('Fetching data from:', apiUrl);
 
-//   const response = await fetch(api_url, options);
-//   if (!response.ok) {
-//     throw new Error(`Error: ${response.status}`);
+  fetch(apiUrl, {
+    method: 'GET',
+    headers: headers,
+  }).then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.text();
+  });
+  then(body => {
+    console.log('Response:', body);
+    var parser = new DOMParser();
+    var xml = parser.parseFromString(body, 'text/xml');
+    var items = xml.querySelectorAll('item');
+    var resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = '';
+    items
+      .forEach(item => {
+        var title = item.querySelector('title').textContent;
+        var link = item.querySelector('link').textContent;
+        var description = item.querySelector('description').textContent;
+        var resultItem = document.createElement('div');
+        resultItem.className = 'result__item';
+        resultItem.innerHTML = `
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <a href="${link}" target="_blank">Read more</a>
+      `;
+        resultsContainer.appendChild(resultItem);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+}
+//  function (error, response, body) {
+//   if (error) {
+//     console.error('Error:', error);
+//     return;
 //   }
-//   return response.json();
-// }
-
-// app.get('/search/blog', async (req, res) => {
-//   try {
-//     const data = await fetchBlogData(req.query.query);
-//     res.status(200).json(data);
-//   } catch (error) {
-//     res.status(500).send(error.message);
-//     console.error('Error:', error.message);
-//   }
+//   console.log('Response:', body);
+//   // 여기서 body를 파싱하고 결과를 HTML에 추가하는 로직을 추가할 수 있습니다.
 // });
+//};
 
-// app.listen(3000, function () {
-//   console.log(
-//     'http://127.0.0.1:3000/search/blog?query=검색어 app listening on port 3000!'
-//   );
-// });
-
-//---
-
-// app.get('/search/blog', (req, res) => {
-//   const api_url =
-//     'https://openapi.naver.com/v1/search/blog?query=' + encodeURI(req.query.query); // JSON 결과
-//   const request = require('request');
-//   const options = {
-//     url: api_url,
-//     headers: {
-//       'X-Naver-Client-Id': oINvcti2ijXhM9DxWau8,
-//       'X-Naver-Client-Secret': laXayxxY8j,
-//     },
-//   };
-//   request.get(options, function (error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//       res.writeHead(200, { 'Content-Type': 'text/json;charset=utf-8' });
-//       res.end(body);
-//     } else {
-//       res.status(response.statusCode).end();
-//       console.log('error = ' + response.statusCode);
-//     }
-//   });
-// });
-
-// function searchBlog() {
-//   const query = document.getElementById('searchQuery').value;
-//   const apiUrl = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(
-//     query
-//   )}`;
+// function Search() {
+//   var searchInput = document.getElementById('searchQuery');
+//   var query = searchInput.value;
+//   string = query;
+//   console.log('Fetching data from:', options.url);
 // }
 
 // document.addEventListener('DOMContentLoaded', function () {
 //   const searchInput = document.getElementById('searchQuery');
-//   searchInput.addEventListener('keydown', function (event) {
-//     if (event.key === 'Enter') {
-//       event.preventDefault();
-//       searchBlog();
-//     }
-//   });
+
+//   function searchBlog(event) {
+//     event.preventDefault();
+//     const query = searchInput.value;
+//     //const apiUrl = `https://openapi.naver.com/v1/search/blog.xml`;
+//     const apiUrl = `https://openapi.naver.com/v1/search/blog.xml?query=${encodeURIComponent(
+//       query
+//     )}&display=10&start=1&sort=sim`;
+
+//     const clientId = 'oINvcti2ijXhM9DxWau8';
+//     const clientSecret = 'laXayxxY8j';
+
+//     console.log('Fetching data from:', apiUrl);
+
+//     fetch(apiUrl, {
+//       method: 'GET',
+//       headers: {
+//         'X-Naver-Client-Id': clientId,
+//         'X-Naver-Client-Secret': clientSecret,
+//       },
+//     })
+//       .then(response => {
+//         console.log('Response status:', response.status);
+
+//         if (!response.ok) {
+//           // 응답이 정상적으로 보내지 못할 때
+//           throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         return response.text();
+//       })
+//       .then(str => {
+//         console.log('Response text:', str);
+
+//         new window.DOMParser().parseFromString(str, 'text/xml');
+//       })
+//       .then(data => {
+//         console.log('Parsed XML data:', data);
+
+//         const items = data.querySelectorAll('item');
+//         const resultsContainer = document.getElementById('results');
+//         resultsContainer.innerHTML = '';
+//         items.forEach(item => {
+//           const title = item.querySelector('title').textContent;
+//           const link = item.querySelector('link').textContent;
+//           const description = item.querySelector('description').textContent;
+//           const resultItem = document.createElement('div');
+//           resultItem.className = 'result__item';
+//           resultItem.innerHTML = `
+//                   <h3>${title}</h3>
+//                   <p>${description}</p>
+//                   <a href="${link}" target="_blank">Read more</a>
+//                 `;
+//           resultsContainer.appendChild(resultItem);
+//         });
+//       })
+//       .catch(error => {
+//         console.error('Error:', error);
+//       });
+//   }
 // });

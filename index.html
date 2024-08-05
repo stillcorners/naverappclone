@@ -8,7 +8,8 @@
     <link rel="shortcut icon" href="./src/img/symbol/symbol.png" />
     <link rel="stylesheet" href="./src/css/normalize.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
-    <title>NAVER</title>
+    <title>NAVER clone</title>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <main id="app">
@@ -34,12 +35,6 @@
               class="search__bar__input"
               id="searchQuery"
             />
-            <!-- <button
-              type="submit"
-              class="search__bar__submit"
-              aria-label="검색 버튼"
-            ></button> -->
-
             <button
               type="button"
               id="searchButton"
@@ -47,6 +42,13 @@
               class="search__bar__voice"
             ></button>
           </form>
+        </div>
+      </div>
+      <div id="results" class="results">
+        <div class="result__item">
+          <h3 class="title"></h3>
+          <p class="description"></p>
+          <a target="_blank" class="link"></a>
         </div>
       </div>
       <div class="shortcut">
@@ -828,15 +830,5 @@
         </div>
       </div>
     </footer>
-    <script>
-      document
-        .getElementById('searchButton')
-        .addEventListener('click', async function () {
-          const query = document.getElementById('searchQuery').value;
-          const response = await fetch(`/search/blog?query=${encodeURIComponent(query)}`);
-          const data = await response.json();
-          document.getElementById('results').innerText = JSON.stringify(data, null, 2);
-        });
-    </script>
   </body>
 </html>
