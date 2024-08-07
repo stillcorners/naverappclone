@@ -9,5 +9,8 @@
     "predeploy": "npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }
