@@ -9,7 +9,49 @@
     <link rel="stylesheet" href="./src/css/normalize.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <title>NAVER clone</title>
-    <script src="index.js" defer></script>
+    <script src="index.js" type="module"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var searchInput = document.getElementById('searchQuery');
+
+        if (searchInput) {
+          searchInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+              event.preventDefault();
+              var query = searchInput.value;
+              searchBlog(query);
+            }
+          });
+        } else {
+          console.error('searchQuery 요소를 찾을 수 없습니다.');
+        }
+
+        async function searchBlog(query) {
+          const response = await fetch(`/search?query=${encodeURIComponent(query)}`);
+          if (response.ok) {
+            const data = await response.json();
+            var items = data.items;
+            var resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+            items.forEach(item => {
+              var title = item.title;
+              var link = item.link;
+              var description = item.description;
+              var resultItem = document.createElement('div');
+              resultItem.className = 'result__item';
+              resultItem.innerHTML = `
+                <h3>${title}</h3>
+                <p>${description}</p>
+                <a href="${link}" target="_blank">Read more</a>
+              `;
+              resultsContainer.appendChild(resultItem);
+            });
+          } else {
+            console.error('Error:', response.status);
+          }
+        }
+      });
+    </script>
   </head>
   <body>
     <main id="app">
