@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(/src/scss/_mixin.scss);
+@import url(/src/css/_mixin.css);
 .content__card {
   /* display: flex;
   flex-direction: column;
