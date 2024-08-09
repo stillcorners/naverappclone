@@ -1,5 +1,5 @@
 /* @import url(../scss/_mixin.scss); */
-@import url(../css/_mixin.css);
+/* @import url(../css/_mixin.css); */
 
 /* css 파일에서 직접 scss 파일을 가져올 수 없음. 
 mixin.scss 를 css 로 컴파일 -> 컴파일된 mixin.css를 style.css로 가져와야 함*/
