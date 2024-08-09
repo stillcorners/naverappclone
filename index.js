@@ -54,6 +54,10 @@ https.createServer(httpsOptions, app).listen(port, () => {
   console.log(`HTTPS Server is running at https://localhost:${port}`);
 });
 
+//TODO
+
+// [ ] 불필요한 파일 (jsdom, express, server.key..) 삭제
+// [ ] 불필요한 주석 삭제
 // app.listen(port, () => {
 //   console.log(`Server is running at http://localhost:${port}`);
 // });
