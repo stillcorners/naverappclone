@@ -1,186 +1,59 @@
-// async function searchBlog(query) {
-//   const response = await fetch(`/search?query=${encodeURIComponent(query)}`);
-//   if (response.ok) {
-//     const data = await response.json();
-//     var items = data.items;
-//     var resultsContainer = document.getElementById('results');
-//     resultsContainer.innerHTML = '';
-//     items.forEach(item => {
-//       var title = item.title;
-//       var link = item.link;
-//       var description = item.description;
-//       var resultItem = document.createElement('div');
-//       resultItem.className = 'result__item';
-//       resultItem.innerHTML = `
-//                 <h3>${title}</h3>
-//                 <p>${description}</p>
-//                 <a href="${link}" target="_blank">Read more</a>
-//               `;
-//       resultsContainer.appendChild(resultItem);
-//     });
-//   } else {
-//     console.error('Error:', response.status);
-//   }
-// }
+import express from 'express';
+import axios from 'axios';
+import cors from 'cors';
 
-// import fs from 'fs';
-// import axios from 'axios';
-// import path from 'path';
-// import { fileURLToPath } from 'url';
+const app = express();
+const port = 3000;
 
-// const app = express();
-// const port = 5000;
+const client_id = 'oINvcti2ijXhM9DxWau8';
+const client_secret = 'laXayxxY8j';
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+app.use(cors());
 
-// app.use(express.static(path.join(__dirname)));
-
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'index.html'));
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header(
+//     'Access-Control-Allow-Headers',
+//     'Origin, X-Requested-With, Content-Type, Accept'
+//   );
+//   next();
 // });
 
-// app.get('/search/blog', async (req, res) => {
-//   const query = req.query.query;
-//   const api_url =
-//     'https://openapi.naver.com/v1/search/blog.json?query=' +
-//     encodeURIComponent(query) +
-//     '&display=10&start=1&sort=random';
+app.get('/search/blog', async (req, res) => {
+  const query = req.query.query;
+  const api_url = 'https://openapi.naver.com/v1/search/blog?query=' + encodeURI(query);
 
-//   try {
-//     const response = await axios.get(api_url, {
-//       headers: {
-//         'X-Naver-Client-Id': 'oINvcti2ijXhM9DxWau8',
-//         'X-Naver-Client-Secret': 'laXayxxY8j',
-//       },
-//     });
+  try {
+    const response = await axios.get(api_url, {
+      headers: {
+        'X-Naver-Client-Id': client_id,
+        'X-Naver-Client-Secret': client_secret,
+      },
+    });
 
-//     if (response.status === 200) {
-//       res.json(response.data);
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(error.response ? error.response.status : 500).send(error.message);
+  }
+});
+// var request = require('request');
+// var options = {
+//   url: api_url,
+//   headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret },
+// };
+//   request.get(options, function (error, response, body) {
+//     if (!error && response.statusCode == 200ㅇ
+//) {
+//       res.writeHead(200, { 'Content-Type': 'text/json;charset=utf-8' });
+//       res.end(body);
 //     } else {
-//       res.status(response.status).send('Error');
+//       res.status(response.statusCode).end();
+//       console.log('error = ' + response.statusCode);
 //     }
-//   } catch (error) {
-//     res.status(500).send('Error');
-//   }
+//   });
 // });
 
-//TODO
-
-// [ ] 불필요한 파일 (jsdom, express, server.key..) 삭제
-// [ ] 불필요한 주석 삭제
-// app.listen(port, () => {
-//   console.log(`Server is running at http://localhost:${port}`);
-// });
-
-// // 검색창에서 엔터 누르면 API 요청
-// function searchEnter() {
-//   var searchInput = document.getElementById('searchQuery');
-
-//   if (searchInput) {
-//     searchInput.addEventListener('keydown', function (event) {
-//       if (event.key === 'Enter') {
-//         event.preventDefault();
-//         var query = searchInput.value;
-//         searchBlog(query);
-//       }
-//     });
-//   } else {
-//     console.error('searchQuery 요소를 찾을 수 없습니다.');
-//   }
-// }
-
-// async function searchBlog(query) {
-//   const api_url =
-//     'https://openapi.naver.com/v1/search/blog.json?query=' +
-//     encodeURIComponent(query) +
-//     '&display=10&start=1&sort=random';
-
-//   try {
-//     const response = await axios.get(api_url, {
-//       headers: {
-//         'X-Naver-Client-Id': 'oINvcti2ijXhM9DxWau8',
-//         'X-Naver-Client-Secret': 'laXayxxY8j',
-//       },
-//     });
-
-//     if (response.status === 200) {
-//       const data = response.data;
-//       var items = data.items;
-//       var resultsContainer = document.getElementById('results');
-//       resultsContainer.innerHTML = '';
-//       items.forEach(item => {
-//         var title = item.title;
-//         var link = item.link;
-//         var description = item.description;
-//         var resultItem = document.createElement('div');
-//         resultItem.className = 'result__item';
-//         resultItem.innerHTML = `
-//           <h3>${title}</h3>
-//           <p>${description}</p>
-//           <a href="${link}" target="_blank">Read more</a>
-//         `;
-//         resultsContainer.appendChild(resultItem);
-//       });
-//     } else {
-//       console.error('Error:', response.status);
-//     }
-//   } catch (error) {
-//     console.error('Error:', error);
-//   }
-// }
-// document.addEventListener('DOMContentLoaded', searchEnter);
-
-// // 수동 이벤트 트리거 ㄴ
-// const event = new window.KeyboardEvent('keydown', { key: 'Enter' });
-// document.getElementById('searchQuery').value = '테스트 검색어';
-// document.getElementById('searchQuery').dispatchEvent(event);
-
-// function searchBlog(query) {
-//   const api_url =
-//     'https://openapi.naver.com/v1/search/blog.json?' + encodeURIComponent(query);
-//   +'=&display=10&start=1&sort=random';
-//   // var apiUrl =
-//   //   'https://openapi.naver.com/v1/search/blog.json?query=' + encodeURIComponent(query);
-
-//   fetch(api_url, {
-//     method: 'GET',
-//     mode: 'cors',
-//     url: 'https://openapi.naver.com/v1/search/blog.json?+query=&display=10&start=1&sort=random',
-//     header: {
-//       'X-Naver-Client-Id': 'oINvcti2ijXhM9DxWau8',
-//       'X-Naver-Client-Secret': 'laXayxxY8j',
-//     },
-//   })
-//     .then(response => {
-//       //HTTP 응답이 성공적일 때 실행
-//       if (!response.ok) {
-//         throw new Error(`HTTP error! status: ${response.status}`);
-//       }
-//       return response.json();
-//     })
-
-//     .then(data => {
-//       // JSON 데이터가 성공적으로 파싱되면 실행됨
-//       var items = data.items;
-//       var resultsContainer = document.getElementById('results');
-//       resultsContainer.innerHTML = '';
-//       items.forEach(item => {
-//         var title = item.title;
-//         var link = item.link;
-//         var description = item.description;
-//         var resultItem = document.createElement('div');
-//         resultItem.className = 'result__item';
-//         resultItem.innerHTML = `
-//           <h3>${title}</h3>
-//           <p>${description}</p>
-//           <a href="${link}" target="_blank">Read more</a>
-//         `;
-//         resultsContainer.appendChild(resultItem);
-//       });
-//     })
-//     .catch(error => {
-//       // HTTP 응답이 실패하면 실행됨
-//       console.error('Error:', error);
-//     });
-// }
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});
