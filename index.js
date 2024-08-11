@@ -16,8 +16,57 @@ app.use(cors());
 //     'Access-Control-Allow-Headers',
 //     'Origin, X-Requested-With, Content-Type, Accept'
 //   );
-//   next();
+//   next();q
 // });
+
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="kr">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="네이버 모바일 앱 클론코딩" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NAVER clone</title>
+        <script>
+          async function searchBlog() {
+            const query = document.getElementById('searchQuery').value;
+            try {
+              const response = await fetch(\`/search/blog?query=\${encodeURIComponent(query)}\`);
+              const data = await response.json();
+              displayResults(data);
+            } catch (error) {
+              console.error('Error:', error);
+            }
+          }
+
+          function displayResults(data) {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = data.items
+              .map(
+                item => \`
+                  <div class="result-item">
+                    <h3>\${item.title}</h3>
+                    <p>\${item.description}</p>
+                    <a href="\${item.link}" target="_blank">Read more</a>
+                  </div>
+                \`
+              )
+              .join('');
+          }
+        </script>
+      </head>
+      <body>
+        <div>
+          <input type="text" id="searchQuery" placeholder="검색어를 입력해주세요." />
+          <button onclick="searchBlog()">검색</button>
+        </div>
+        <div id="results"></div>
+      </body>
+    </html>
+    `);
+});
 
 app.get('/search/blog', async (req, res) => {
   const query = req.query.query;
@@ -37,23 +86,9 @@ app.get('/search/blog', async (req, res) => {
     res.status(error.response ? error.response.status : 500).send(error.message);
   }
 });
-// var request = require('request');
-// var options = {
-//   url: api_url,
-//   headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret },
-// };
-//   request.get(options, function (error, response, body) {
-//     if (!error && response.statusCode == 200ㅇ
-//) {
-//       res.writeHead(200, { 'Content-Type': 'text/json;charset=utf-8' });
-//       res.end(body);
-//     } else {
-//       res.status(response.statusCode).end();
-//       console.log('error = ' + response.statusCode);
-//     }
-//   });
-// });
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+
+// node index.js
