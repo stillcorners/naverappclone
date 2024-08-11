@@ -8,7 +8,13 @@ const port = 3000;
 const client_id = 'oINvcti2ijXhM9DxWau8';
 const client_secret = 'laXayxxY8j';
 
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://stillcorners.github.io',
+    methods: ['GET'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', '*');
@@ -16,7 +22,7 @@ app.use(cors());
 //     'Access-Control-Allow-Headers',
 //     'Origin, X-Requested-With, Content-Type, Accept'
 //   );
-//   next();q
+//   next();
 // });
 
 app.get('/', (req, res) => {
