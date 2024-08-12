@@ -10,8 +10,7 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.static(join(__dirname, 'src')));
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'src/result')));
 
 const client_id = 'oINvcti2ijXhM9DxWau8';
 const client_secret = 'laXayxxY8j';
@@ -49,5 +48,3 @@ app.get('/search/blog', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
-
-// node index.js
