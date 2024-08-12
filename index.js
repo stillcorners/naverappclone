@@ -1,10 +1,16 @@
 import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
-import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 const client_id = 'oINvcti2ijXhM9DxWau8';
 const client_secret = 'laXayxxY8j';
@@ -19,8 +25,6 @@ app.use(
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/search/blog', async (req, res) => {
   const query = req.query.query;
