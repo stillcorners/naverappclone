@@ -37,7 +37,10 @@ app.get('/results', (req, res) => {
 
 app.get('/search/blog', async (req, res) => {
   const query = req.query.query;
-  const api_url = 'https://openapi.naver.com/v1/search/blog?query=' + encodeURI(query);
+  const api_url =
+    'https://openapi.naver.com/v1/search/blog?query=' +
+    encodeURI(query) +
+    '&display=10&start=1&sort=date';
 
   try {
     const response = await axios.get(api_url, {
