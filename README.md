@@ -1,19 +1,12 @@
 > <aside>
 
-> 배포 페이지: https://glacial-basin-92310-01f7dc392c47.herokuapp.com/
-
-> </aside>
-
-> <aside>
-
-> 깃허브: https://github.com/stillcorners/naverappclone
+> ## 배포 페이지: https://glacial-basin-92310-01f7dc392c47.herokuapp.com/
 >
 > </aside>
 
 ## 1) 사용한 스택
 
-- `Heroku`, `Express`, `Javascript`
-- `HTML`, `SCSS`, `CSS`
+- `Heroku`, `Express`, `Javascript`, `HTML`, `SCSS`
 
 ## 2) 프로젝트 상세사항
 
@@ -143,7 +136,7 @@ SCSS 파일 대부분에는 파일명 맨 앞에 언더바(`_`)를 붙인다. �
 
 그러나 클래스명이 길어져서 HTML 파일이 과하게 복잡해진다는 단점이 있었다. 돌이켜보면 굳이 언더바를 두 개 사용하지 않아도 되었던 것 같다는 아쉬움이 남는다. 다음에는 `BEM`이나 `OOCSS` 네이밍 방식을 사용해보고 싶기도 하고, `btn`, `nav` 와 같이 보편적으로 사용하는 축약형 네이밍에 대해 좀 더 찾아보고 싶다.
 
-### **10. `rem` 단위를 사용하여 상대적인 반응형 사이즈 지정하기**
+### 10. `rem` 단위를 사용하여 상대적인 반응형 사이즈 지정하기
 
 `rem` 단위를 사용하는 방법은 다음과 같다.
 
