@@ -3,6 +3,7 @@ import axios from 'axios';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { clientId, clientSecret } from './secret.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -12,9 +13,6 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(join(__dirname, 'src/result')));
 app.use(express.static(join(__dirname, 'src')));
-
-const client_id = 'oINvcti2ijXhM9DxWau8';
-const client_secret = 'laXayxxY8j';
 
 app.use(
   cors({
@@ -45,8 +43,8 @@ app.get('/search/blog', async (req, res) => {
   try {
     const response = await axios.get(api_url, {
       headers: {
-        'X-Naver-Client-Id': client_id,
-        'X-Naver-Client-Secret': client_secret,
+        'X-Naver-ClientId': clientId,
+        'X-Naver-ClientSecret': clientSecret,
       },
     });
 
