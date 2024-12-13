@@ -14,7 +14,7 @@
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           const params = new URLSearchParams(window.location.search);
-          const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+          // const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
           const query = params.get("query");
 
           // 검색어 없을 경우
@@ -26,15 +26,20 @@
         // 검색어 있을 경우에만 API 요청
           async function searchBlog(query) {
             try {
-              const response = await axios.get(
-                `${PROXY}/v1/search/blog?query=${encodeURIComponent(query)}`
-              );
+              const response = await axios.get(`/proxy/v1/search/blog`, {
+                params: { query: query },
+                headers: {
+                  'X-Naver-Client-Id': process.env.CLIENT_ID,
+                  'X-Naver-Client-Secret': process.env.CLIENT_SECRET
+                }
+              });
+              // const response = await axios.get(
+              //   `${PROXY}/v1/search/blog?query=${encodeURIComponent(query)}`
+              // );
               displayResults(response.data);
-              //const data = await response.json();
-              //displayResults(data);
             } catch (error) {
               console.error("Error:", error);
-            }
+              document.getElementById('results').innerHTML = '<p>검색 중 오류가 발생했습니다.</p>';
           }
 
           function displayResults(data) {
@@ -43,19 +48,18 @@
 
             if (data && data.items && Array.isArray(data.items)) {
               resultsContainer.innerHTML += data.items
-                .map(
-                  item => `
+                .map(item => `
                     <div class="result-item">
                       <h3>${item.title}</h3>
                       <p>${item.description}</p>
                       <a href="${item.link}" target="_blank">Read more</a>
                     </div>
-                  `
-                ).join("");
+                  `).join("");
               } else {
               resultsContainer.innerHTML += "<p>검색 결과가 없습니다.</p>";
+              }        
             }
-            searchBlog(query);
+          searchBlog(query);
         }});
       </script>
     </main>
