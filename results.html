@@ -9,7 +9,6 @@
   </head>
   <body>
     <main id="app">
-      <h1>검색 결과: 네이버 블로그 API 요청에 대한 응답</h1>
       <div id="results" class="results"></div>
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script>
@@ -19,8 +18,9 @@
           
           async function searchBlog(query) {
             try {
-              const response = await axios.get(`/.netlify/functions/handler?query=${encodeURIComponent(query)}`);
+              const response = await axios.get(`/api/v1/search/blog?query=${encodeURIComponent(query)}`);
               displayResults(response.data);
+              console.log(response.data);
               // const response = await axios.get(
               //   `${PROXY}/search/blog?query=${encodeURI(
               //     query
@@ -35,7 +35,8 @@
 
           function displayResults(data) {
             const resultsContainer = document.getElementById("results");
-            resultsContainer.innerHTML = `<h2>검색 결과: ${query}에 대한 검색결과</h2>`;
+            resultsContainer.innerHTML = `<h1>네이버 블로그 API 요청에 대한 응답: ${query}에 대한 검색 결과</h1>`;
+          if (data && data.items && Array.isArray(data.items)) {
             resultsContainer.innerHTML += data.items
               .map(
                 item => `
@@ -46,9 +47,10 @@
                   </div>
                 `
               ).join("");
+          } else {
+            resultsContainer.innerHTML += "<p>검색 결과가 없습니다.</p>";
           }
-          searchBlog(query);
-        });
+        }});
       </script>
     </main>
   </body>
