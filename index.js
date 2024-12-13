@@ -7,8 +7,8 @@
   // dotenv.config();
 // }
 
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
+const clientId = import.meta.env.VITE_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
 // export const handler = async (event) => {
   // const query = event.queryStringParameters?.query;
