@@ -31,9 +31,11 @@
 //   }
 // };
 
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
 async function searchBlog(query) {
   try {
-    const response = await axios.get(`/api/v1/search/blog?query=${encodeURIComponent(query)}`);
+    const response = await axios.get(`${PROXY}/v1/search/blog?query=${encodeURIComponent(query)}`);
     displayResults(response.data);
   } catch (error) {
     console.error("Error:", error);
