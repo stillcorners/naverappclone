@@ -16,16 +16,20 @@
           const params = new URLSearchParams(window.location.search);
           const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
           const query = params.get("query");
-          
+
+          // 검색어 없을 경우
+            if (!query) {
+              document.getElementById('results').innerHTML = '<p>검색어를 입력해주세요</p>';
+              return;
+            }
+
+        // 검색어 있을 경우에만 API 요청
           async function searchBlog(query) {
             try {
-              const response = await axios.get(`${PROXY}/v1/search/blog?query=${encodeURIComponent(query)}`);
+              const response = await axios.get(
+                `${PROXY}/v1/search/blog?query=${encodeURIComponent(query)}`
+              );
               displayResults(response.data);
-              // const response = await axios.get(
-              //   `${PROXY}/search/blog?query=${encodeURI(
-              //     query
-              //   )}`
-              // );
               //const data = await response.json();
               //displayResults(data);
             } catch (error) {
@@ -35,7 +39,8 @@
 
           function displayResults(data) {
             const resultsContainer = document.getElementById("results");
-            resultsContainer.innerHTML = `<h1>네이버 블로그 API 요청에 대한 응답: ${query}에 대한 검색 결과</h1>`;
+            resultsContainer.innerHTML = `<h1>네이버 블로그 검색 API 요청 응답: ${query}에 대한 검색 결과</h1>`;
+
             if (data && data.items && Array.isArray(data.items)) {
               resultsContainer.innerHTML += data.items
                 .map(
@@ -50,7 +55,7 @@
               } else {
               resultsContainer.innerHTML += "<p>검색 결과가 없습니다.</p>";
             }
-          searchBlog(query);
+            searchBlog(query);
         }});
       </script>
     </main>

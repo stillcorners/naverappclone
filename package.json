@@ -2,7 +2,7 @@
   "name": "naver",
   "version": "1.0.0",
   "description": "mobile naver app clone",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "scss": "node-sass src/scss/main.scss src/scss/main.css src/css/style.css src/css/normalize.css",
     "start": "node index.js"

@@ -824,7 +824,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/index.js" type="module"></script>
+    <!-- <script src="/index.js" type="module"></script> -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('searchQuery');
@@ -834,7 +834,7 @@
             if (event.key === 'Enter') {
               event.preventDefault();
               const query = searchInput.value;
-              window.location.href = `/results.html?query=${encodeURI(query)}`;
+              window.location.href = `/results?query=${encodeURI(query)}`;
             }
           });
         }
