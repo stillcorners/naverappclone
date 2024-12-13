@@ -20,7 +20,6 @@
             try {
               const response = await axios.get(`/api/v1/search/blog?query=${encodeURIComponent(query)}`);
               displayResults(response.data);
-              console.log(response.data);
               // const response = await axios.get(
               //   `${PROXY}/search/blog?query=${encodeURI(
               //     query
@@ -50,6 +49,7 @@
           } else {
             resultsContainer.innerHTML += "<p>검색 결과가 없습니다.</p>";
           }
+          searchBlog(query);
         }});
       </script>
     </main>

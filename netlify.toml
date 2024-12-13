@@ -1,6 +1,9 @@
 [[redirects]]
 from = "/api/*"
-  to = "https://openapi.naver.com/:splat"
-  status = 200
-  force = true
-  headers =  {X-Naver-Client-Id = ":CLIENT_ID", X-Naver-Client-Secret = ":CLIENT_SECRET"}
+to = "https://openapi.naver.com/:splat"
+status = 200
+force = true
+headers =  {
+  X-Naver-Client-Id = ":CLIENT_ID",
+  X-Naver-Client-Secret = ":CLIENT_SECRET"
+}

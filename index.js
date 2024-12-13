@@ -33,12 +33,7 @@
 
 async function searchBlog(query) {
   try {
-    const response = await axios.get(`/api/v1/search/blog?query=${encodeURIComponent(query)}`, {
-      headers: {
-        'X-Naver-Client-Id': 'YOUR_CLIENT_ID',
-        'X-Naver-Client-Secret': 'YOUR_CLIENT_SECRET'
-      }
-    });
+    const response = await axios.get(`/api/v1/search/blog?query=${encodeURIComponent(query)}`);
     displayResults(response.data);
   } catch (error) {
     console.error("Error:", error);
