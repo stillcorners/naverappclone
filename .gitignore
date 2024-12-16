@@ -1,2 +1,4 @@
 .env
 todo.md
+# Local Netlify folder
+.netlify

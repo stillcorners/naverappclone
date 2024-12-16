@@ -1,5 +1,11 @@
 [build]
-  functions = "functions" 
+  functions = "functions/"
+  publish = "build"
 
 [dev]
-  functions = "functions
+  functions = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/netlify/functions/searchBlog"
+  status = 200

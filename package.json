@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "scss": "node-sass src/scss/main.scss src/scss/main.css src/css/style.css src/css/normalize.css",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev:netlify": "netlify dev"
   },
   "author": "",
   "license": "ISC",
