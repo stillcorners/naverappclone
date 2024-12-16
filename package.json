@@ -7,13 +7,14 @@
     "scss": "node-sass src/scss/main.scss src/scss/main.css src/css/style.css src/css/normalize.css",
     "start": "node index.js"
   },
-  "proxy": {
-    "proxy": "https://openapi.naver.com"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.9",
     "dotenv": "^16.4.5"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "netlify-cli": "^17.38.0"
+  }
 }

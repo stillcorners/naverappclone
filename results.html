@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="src/img/symbol/symbol.png" type="image/png" />
     <title>검색 결과</title>
     <link rel="stylesheet" href="/src/css/normalize.css" />
   </head>
   <body>
     <main id="app">
       <div id="results" class="results"></div>
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           const params = new URLSearchParams(window.location.search);
-          // const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
           const query = params.get("query");
 
           // 검색어 없을 경우
@@ -24,21 +23,11 @@
             }
 
         // 검색어 있을 경우에만 API 요청
-          async function searchBlog(query) {
+          async function searchBlog (query) {
             try {
-              const response = await axios.get(`/proxy/v1/search/blog`, {
-                params: { query: query },
-                headers: {
-                  'X-Naver-Client-Id': process.env.CLIENT_ID,
-                  'X-Naver-Client-Secret': process.env.CLIENT_SECRET
-                }
-              });
-              // const response = await axios.get(
-              //   `${PROXY}/v1/search/blog?query=${encodeURIComponent(query)}`
-              // );
+              const response = await fetch(`/.netlify/functions/searchBlog?query=${encodeURIComponent(query)}`);
+              const data = await response.json();
               displayResults(response.data);
-              console.log(process.env.CLIENT_ID);
-              console.log(process.env.CLIENT_SECRET);
             } catch (error) {
               console.error("Error:", error);
               document.getElementById('results').innerHTML = '<p>검색 중 오류가 발생했습니다.</p>';
