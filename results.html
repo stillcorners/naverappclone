@@ -37,6 +37,8 @@
               //   `${PROXY}/v1/search/blog?query=${encodeURIComponent(query)}`
               // );
               displayResults(response.data);
+              console.log(process.env.CLIENT_ID);
+              console.log(process.env.CLIENT_SECRET);
             } catch (error) {
               console.error("Error:", error);
               document.getElementById('results').innerHTML = '<p>검색 중 오류가 발생했습니다.</p>';
