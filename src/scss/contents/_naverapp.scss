@@ -1,3 +1,5 @@
+@use "../mixin";
+
 .naverapp {
   display: flex;
   -webkit-box-align: center;
@@ -5,9 +7,13 @@
   color: #767678;
 
   &::before {
-    @include spImg($url: '/src/img/sp/sp_search.png', $position: -214px -92px, $size: 408px 372px);
+    @include mixin.spImg(
+      "/src/img/sp/sp_search.png",
+      -214px -92px,
+      408px 372px
+    );
 
-    content: '';
+    content: "";
     width: 40px;
     height: 40px;
     display: block;
@@ -20,6 +26,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     font-size: 1.4rem;
     font-weight: 400;
@@ -53,7 +60,7 @@
       white-space: nowrap;
 
       &::after {
-        content: '';
+        content: "";
         display: inline-block;
         width: 7px;
         height: 7px;

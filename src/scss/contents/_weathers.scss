@@ -1,3 +1,5 @@
+@use "../mixin";
+
 .weather {
   display: flex;
   justify-content: space-evenly;
@@ -20,10 +22,10 @@
         width: 48px;
         height: 40px;
 
-        @include spImg(
-          $url: '/src/img/sp/sp_weather.png',
-          $position: -139px 6px,
-          $size: 423px 373px
+        @include mixin.spImg(
+          "/src/img/sp/sp_weather.png",
+          -139px 6px,
+          423px 373px
         );
       }
     }
@@ -89,14 +91,18 @@
       color: #767678;
 
       &::after {
-        content: '';
+        content: "";
         display: inline-block;
         width: 16px;
         height: 16px;
         margin: 4px 4px;
         vertical-align: top;
 
-        @include spImg($url: '/src/img/sp/sp_search.png', $position: 20px 26px, $size: 420px 383px);
+        @include mixin.spImg(
+          "/src/img/sp/sp_search.png",
+          20px 26px,
+          420px 383px
+        );
       }
     }
   }

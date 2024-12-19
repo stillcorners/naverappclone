@@ -1,3 +1,5 @@
+@use "../mixin";
+
 .clip {
   padding: 15px 15px 0px;
 
@@ -25,15 +27,15 @@
       color: #1e1e23;
 
       &::before {
-        content: '';
+        content: "";
         display: block;
         width: 49px;
         height: 20px;
 
-        @include spImg(
-          $url: '/src/img/sp/sp_search.png',
-          $position: -73px -297px,
-          $size: 408px 372px
+        @include mixin.spImg(
+          "/src/img/sp/sp_search.png",
+          -73px -297px,
+          408px 372px
         );
       }
     }
@@ -68,17 +70,17 @@
       z-index: 1;
 
       &::before {
-        content: '';
+        content: "";
         display: inline-block;
         width: 11px;
         height: 13px;
         vertical-align: -2px;
         margin-right: 3px;
 
-        @include spImg(
-          $url: '/src/img/sp/sp_main.png',
-          $position: -216px -204px,
-          $size: 254px 220px
+        @include mixin.spImg(
+          "/src/img/sp/sp_main.png",
+          -216px -204px,
+          254px 220px
         );
       }
 

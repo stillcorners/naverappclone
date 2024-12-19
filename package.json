@@ -1,12 +1,11 @@
 {
   "name": "naver",
-  "version": "1.0.0",
   "description": "mobile naver app clone",
   "main": "index.html",
   "scripts": {
-    "scss": "node-sass src/scss/main.scss src/scss/main.css src/css/style.css src/css/normalize.css",
+    "scss": "sass src/scss:src/css --style compressed",
     "start": "node index.js",
-    "build": "npm install && sass scss:css"
+    "build": "npm install && npm run scss"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +14,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.2"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
 }

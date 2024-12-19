@@ -1,3 +1,5 @@
+@use "../mixin";
+
 .promotion {
   padding-top: 7px;
 
@@ -18,32 +20,30 @@
         text-align: right;
 
         &::before {
-          content: '';
+          content: "";
           width: 30px;
           height: 25px;
           top: 50%;
 
-          @include spImg(
-            $url: '/src/img/sp/sp_search.png',
-            $repeat: no-repeat,
-            $size: 500px 456px,
-            $position: -358px -392px
+          @include mixin.spImg(
+            "/src/img/sp/sp_search.png",
+            500px 456px,
+            -358px -392px
           );
         }
       }
 
       &__right::after {
-        content: '';
+        content: "";
         width: 30px;
         height: 25px;
         top: 30%;
         position: relative;
 
-        @include spImg(
-          $url: '/src/img/sp/sp_search.png',
-          $repeat: no-repeat,
-          $size: 500px 456px,
-          $position: -390px -392px
+        @include mixin.spImg(
+          "/src/img/sp/sp_search.png",
+          500px 456px,
+          -390px -392px
         );
       }
     }

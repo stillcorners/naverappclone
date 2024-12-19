@@ -1,4 +1,4 @@
-@mixin spImg($url, $repeat: no-repeat, $position, $size) {
+@mixin spImg($url, $position, $size, $repeat: no-repeat) {
   background: url($url);
   background-repeat: $repeat;
   background-position: $position;

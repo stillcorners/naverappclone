@@ -12,8 +12,8 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.static(join(__dirname, 'src'))); // index.html 위치
-app.use(express.static(join(__dirname, 'src/result'))); // results.html 위치
+app.use(express.static(join(__dirname, '/'))); // index.html 위치
+app.use(express.static(join(__dirname, '/result'))); // results.html 위치
 
 app.use(
   cors({
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/results', (req, res) => {
-  res.sendFile(join(__dirname, 'src/result/results.html'));
+  res.sendFile(join(__dirname, '/result/results.html'));
 });
 
 app.get('/search/blog', async (req, res) => {

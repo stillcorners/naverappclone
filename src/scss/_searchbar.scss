@@ -1,4 +1,4 @@
-@import './mixin';
+@use "./mixin";
 
 .search {
   padding-top: 60px;
@@ -11,10 +11,10 @@
   }
 
   &__logo {
-    @include spImg(
-      $url: '/src/img/sp/sp_main_search.png',
-      $position: -2px -194px,
-      $size: 323px 273px
+    @include mixin.spImg(
+      "/src/img/sp/sp_main_search.png",
+      -2px -194px,
+      323px 273px
     );
 
     width: 36px;
@@ -74,10 +74,10 @@
     // }
 
     &__voice {
-      @include spImg(
-        $url: '/src/img/sp/sp_main_search.png',
-        $position: -258px -194px,
-        $size: 323px 273px
+      @include mixin.spImg(
+        "/src/img/sp/sp_main_search.png",
+        -258px -194px,
+        323px 273px
       );
 
       cursor: pointer;

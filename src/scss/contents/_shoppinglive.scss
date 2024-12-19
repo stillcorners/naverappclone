@@ -1,3 +1,5 @@
+@use "../mixin";
+
 .shoppinglive {
   padding: 0 20px;
 
@@ -25,10 +27,10 @@
         white-space: nowrap;
         vertical-align: -2px;
 
-        @include spImg(
-          $url: '/src/img/sp/sp_search.png',
-          $position: -201px -322px,
-          $size: 408px 372px
+        @include mixin.spImg(
+          "/src/img/sp/sp_search.png",
+          -201px -322px,
+          408px 372px
         );
       }
 
@@ -40,10 +42,10 @@
         color: transparent;
         vertical-align: top;
 
-        @include spImg(
-          $url: '/src/img/sp/sp_search.png',
-          $position: -349px -204px,
-          $size: 408px 372px
+        @include mixin.spImg(
+          "/src/img/sp/sp_search.png",
+          -349px -204px,
+          408px 372px
         );
       }
     }
@@ -59,17 +61,17 @@
     letter-spacing: -0.35px;
 
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 16px;
       height: 16px;
       margin-right: 1px;
       vertical-align: -2px;
 
-      @include spImg(
-        $url: '/naver/src/img/sp/sp_search.png',
-        $position: -390px -186px,
-        $size: 408px 372px
+      @include mixin.spImg(
+        "/src/img/sp/sp_search.png",
+        -390px -186px,
+        408px 372px
       );
     }
   }
@@ -180,17 +182,17 @@
     display: inline-block;
 
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 16px;
       height: 14px;
       margin-left: 1px;
       vertical-align: -2px;
 
-      @include spImg(
-        $url: '/src/img/sp/sp_search.png',
-        $position: -390px -269px,
-        $size: 408px 372px
+      @include mixin.spImg(
+        "/src/img/sp/sp_search.png",
+        -390px -269px,
+        408px 372px
       );
     }
   }

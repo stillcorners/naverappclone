@@ -1,3 +1,5 @@
+@use "./mixin";
+
 .footer {
   background-color: #f4f6f8;
   position: relative;
@@ -20,7 +22,7 @@
       border: 1px solid #e2e6e9;
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: 0;
@@ -67,7 +69,7 @@
       vertical-align: top;
 
       &::before {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: -4px;
@@ -95,16 +97,16 @@
       border-radius: 5px;
 
       &::before {
-        content: '';
+        content: "";
         display: block;
         width: 26px;
         height: 23px;
         margin: auto;
 
-        @include spImg(
-          $url: '/src/img/sp/sp_main.png',
-          $size: 254px 220px,
-          $position: -84px -140px
+        @include mixin.spImg(
+          "/src/img/sp/sp_main.png",
+          254px 220px,
+          -84px -140px
         );
       }
     }
@@ -132,7 +134,7 @@
       letter-spacing: -0.5px;
 
       &::before:not(:first-of-type) {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: 7px;
@@ -153,6 +155,6 @@
     overflow: hidden;
     vertical-align: top;
 
-    @include spImg($url: '/src/img/sp/sp_main.png', $size: 245px 220px, $position: -47px -120px);
+    @include mixin.spImg("/src/img/sp/sp_main.png", 245px 220px, -47px -120px);
   }
 }
