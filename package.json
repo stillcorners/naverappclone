@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "scss": "node-sass src/scss/main.scss src/scss/main.css src/css/style.css src/css/normalize.css",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm install && sass scss:css"
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +15,5 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.2"
   },
-  "type": "module",
-  "devDependencies": {
-    "netlify-cli": "^17.38.0"
-  }
+  "type": "module"
 }
