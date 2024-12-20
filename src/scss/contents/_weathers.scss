@@ -22,11 +22,7 @@
         width: 48px;
         height: 40px;
 
-        @include mixin.spImg(
-          "/src/img/sp/sp_weather.png",
-          -139px 6px,
-          423px 373px
-        );
+        @include mixin.spImg("/img/sp/sp_weather.png", -139px 6px, 423px 373px);
       }
     }
 
@@ -98,11 +94,7 @@
         margin: 4px 4px;
         vertical-align: top;
 
-        @include mixin.spImg(
-          "/src/img/sp/sp_search.png",
-          20px 26px,
-          420px 383px
-        );
+        @include mixin.spImg("/img/sp/sp_search.png", 20px 26px, 420px 383px);
       }
     }
   }

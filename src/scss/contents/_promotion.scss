@@ -26,7 +26,7 @@
           top: 50%;
 
           @include mixin.spImg(
-            "/src/img/sp/sp_search.png",
+            "/img/sp/sp_search.png",
             500px 456px,
             -358px -392px
           );
@@ -41,7 +41,7 @@
         position: relative;
 
         @include mixin.spImg(
-          "/src/img/sp/sp_search.png",
+          "/img/sp/sp_search.png",
           500px 456px,
           -390px -392px
         );
