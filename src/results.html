@@ -26,7 +26,7 @@
           async function searchBlog (query) {
             const CLIENT_ID = 'oINvcti2ijXhM9DxWau8';
             const CLIENT_SECRET = 'laXayxxY8j';
-            const API_URL = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(query)}&display=10&start=1&sort=date`;
+            const API_URL = `/proxy?query=${encodeURIComponent(query)}&display=10&start=1&sort=date`;
 
             try {
               const response = await fetch(API_URL, {
@@ -36,13 +36,13 @@
                   "X-Naver-Client-Secret": CLIENT_SECRET,
                 },
               });
-
+              
               if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
               }
-
               const data = await response.json();
               displayResults(data);
+            
             } catch (error) {
               console.error("Error:", error);
               document.getElementById('results').innerHTML = '<p>검색 중 오류가 발생했습니다.</p>';
@@ -57,8 +57,8 @@
               resultsContainer.innerHTML += data.items
                 .map(item => `
                     <div class="result-item">
-                      <h3>${item.title}</h3>
-                      <p>${item.description}</p>
+                      <h3>${item.title.replace(/(<([^>]+)>)/gi, "")}</h3>
+                      <p>${item.description.replace(/(<([^>]+)>)/gi, "")}</p>
                       <a href="${item.link}" target="_blank">Read more</a>
                     </div>
                   `).join("");
