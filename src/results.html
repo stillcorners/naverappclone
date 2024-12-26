@@ -27,8 +27,8 @@
             const CLIENT_ID = 'oINvcti2ijXhM9DxWau8';
             const CLIENT_SECRET = 'laXayxxY8j';
 
-            const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "/proxy";
-            const API_URL = `/v1/search/blog?query=${encodeURI(query)}&display=10&start=1&sort=date`;
+            const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "";
+            const API_URL = `/proxy/v1/search/blog?query=${encodeURI(query)}&display=10&start=1&sort=date`;
 
             try {
               const response = await fetch(`${BASE_URL}${API_URL}`, {
@@ -40,14 +40,15 @@
               });
               
               if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, body: ${errorText}`);
               }
               const data = await response.json();
               displayResults(data);
             
             } catch (error) {
               console.error("Error:", error);
-              document.getElementById('results').innerHTML = '<p>검색 중 오류가 발생했습니다.</p>';
+              document.getElementById('results').innerHTML = `<p>검색 중 오류가 발생했습니다.</p>: ${error.message}`;
             }
           }
 
