@@ -27,11 +27,11 @@
             const CLIENT_ID = 'oINvcti2ijXhM9DxWau8';
             const CLIENT_SECRET = 'laXayxxY8j';
 
-            const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "";
-            const API_URL = `/proxy/v1/search/blog?query=${encodeURI(query)}&display=10&start=1&sort=date`;
+            // const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "/proxy";
+            const API_URL = `https://openapi.naver.com/v1/search/blog/proxy/v1/search/blog?query=${encodeURI(query)}&display=10&start=1&sort=date`;
 
             try {
-              const response = await fetch(`${BASE_URL}${API_URL}`, {
+              const response = await fetch(API_URL, {
                 method: "GET",
                 headers: {
                   "Content-Type": "application/json",
