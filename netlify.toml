@@ -1,3 +1,7 @@
+[build]
+  publish = "src"
+  command = "npm run build"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -9,7 +13,3 @@
   status = 200
   force = true
   headers = {X-From = "Netlify"}
-
-[[build]]
-  publish = "src"
-  command = "npm run build"
