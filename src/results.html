@@ -31,7 +31,7 @@
             const API_URL = `/v1/search/blog?query=${encodeURI(query)}&display=10&start=1&sort=date`;
 
             try {
-              const response = await fetch(`${BASE_URL}${API_PATH}`, {
+              const response = await fetch(`${BASE_URL}${API_URL}`, {
                 method: "GET",
                 headers: {
                   "X-Naver-Client-Id": CLIENT_ID,
