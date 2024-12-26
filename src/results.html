@@ -15,7 +15,7 @@
         document.addEventListener("DOMContentLoaded", function () {
           const params = new URLSearchParams(window.location.search);
           const query = params.get("query");
-
+          
           // 검색어 없을 경우
             if (!query) {
               document.getElementById('results').innerHTML = '<p>검색어를 입력해주세요</p>';
@@ -26,10 +26,11 @@
           async function searchBlog (query) {
             const CLIENT_ID = 'oINvcti2ijXhM9DxWau8';
             const CLIENT_SECRET = 'laXayxxY8j';
-            const API_URL = `/proxy?query=${encodeURIComponent(query)}&display=10&start=1&sort=date`;
+            //const API_URL = `?query=${encodeURI(query)}&display=10&start=1&sort=date`;
+            const PROXY_URL = `/proxy?query=${encodeURI(query)}&display=10&start=1&sort=date`;
 
             try {
-              const response = await fetch(API_URL, {
+              const response = await fetch(PROXY_URL, {
                 method: "GET",
                 headers: {
                   "X-Naver-Client-Id": CLIENT_ID,

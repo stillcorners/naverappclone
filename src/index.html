@@ -832,7 +832,7 @@
             event.preventDefault(); 
             const query = searchInput.value; 
             if (query) {
-              window.location.href = `results.html?query=${encodeURIComponent(query)}`;
+              window.location.href = `results.html?query=${encodeURI(query)}`;
               }}
             });
           }
