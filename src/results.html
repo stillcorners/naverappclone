@@ -26,8 +26,9 @@
           async function searchBlog (query) {
             const CLIENT_ID = 'oINvcti2ijXhM9DxWau8';
             const CLIENT_SECRET = 'laXayxxY8j';
-
-            const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "/proxy";
+            
+            const BASE_URL = "/api";
+            //const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "/proxy";
             const API_URL = `/v1/search/blog?query=${encodeURI(query)}&display=10&start=1&sort=date`;
 
             try {
