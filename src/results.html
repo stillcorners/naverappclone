@@ -27,8 +27,8 @@
             const CLIENT_ID = 'oINvcti2ijXhM9DxWau8';
             const CLIENT_SECRET = 'laXayxxY8j';
             
-            const BASE_URL = "/api";
-            //const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "/proxy";
+            // const BASE_URL = "/api";
+            const BASE_URL = window.location.hostname === "localhost" ? "https://openapi.naver.com" : "/proxy";
             const API_URL = `/v1/search/blog?query=${encodeURI(query)}&display=10&start=1&sort=date`;
 
             try {
@@ -39,13 +39,14 @@
                   "X-Naver-Client-Secret": CLIENT_SECRET,
                 },
               });
-              
-              if (!response.ok) {
+
+              if (response.headers.get("Content-Type").includes("application/json")) {
+                const data = await response.json();
+                displayResults(data);
+              } else {
                 const errorText = await response.text();
-                throw new Error(`HTTP error! status: ${response.status}, body: ${errorText}`);
-              }
-              const data = await response.json();
-              displayResults(data);
+                throw new Error(`HTTP error! status: ${response.status}, 'api did not return json /', ${errorText}`);
+              }              
             
             } catch (error) {
               console.error("Error:", error);
