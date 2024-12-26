@@ -40,13 +40,22 @@
                 },
               });
 
-              if (response.headers.get("Content-Type").includes("application/json")) {
+              if (!response.ok) {
                 const data = await response.json();
                 displayResults(data);
               } else {
                 const errorText = await response.text();
                 throw new Error(`HTTP error! status: ${response.status}, 'api did not return json /', ${errorText}`);
-              }              
+              }
+                
+
+              // if (response.headers.get("Content-Type").includes("application/json")) {
+              //   const data = await response.json();
+              //   displayResults(data);
+              // } else {
+              //   const errorText = await response.text();
+              //   throw new Error(`HTTP error! status: ${response.status}, 'api did not return json /', ${errorText}`);
+              // }              
             
             } catch (error) {
               console.error("Error:", error);
